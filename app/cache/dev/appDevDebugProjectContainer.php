@@ -3716,7 +3716,7 @@ class appDevDebugProjectContainer extends Container
             ),
             'assetic.java.bin' => 'C:\\Windows\\system32\\java.EXE',
             'assetic.node.bin' => '/usr/bin/node',
-            'assetic.ruby.bin' => 'C:\\Ruby193\\bin\\ruby.EXE',
+            'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
             'assetic.twig_extension.functions' => array(
