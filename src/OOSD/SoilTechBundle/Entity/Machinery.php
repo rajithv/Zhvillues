@@ -20,11 +20,6 @@ class Machinery
     private $name;
 
     /**
-     * @var \DateTime
-     */
-    private $date;
-
-    /**
      * @var float
      */
     private $capacity;
@@ -61,29 +56,6 @@ class Machinery
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set date
-     *
-     * @param \DateTime $date
-     * @return Machinery
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-    
-        return $this;
-    }
-
-    /**
-     * Get date
-     *
-     * @return \DateTime 
-     */
-    public function getDate()
-    {
-        return $this->date;
     }
 
     /**
