@@ -17,6 +17,10 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new OOSD\SoilTechBundle\OOSDSoilTechBundle(),
+            new System\ResourceBundle\SystemResourceBundle(),
+            new System\ProjectBundle\SystemProjectBundle(),
+            new System\ClientBundle\SystemClientBundle(),
+            new System\TrackingBundle\SystemTrackingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

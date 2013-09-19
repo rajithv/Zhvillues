@@ -1,0 +1,3 @@
+system_project_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SystemProjectBundle:Default:index }

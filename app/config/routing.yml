@@ -1,3 +1,19 @@
+system_tracking:
+    resource: "@SystemTrackingBundle/Resources/config/routing.yml"
+    prefix:   /
+
+system_client:
+    resource: "@SystemClientBundle/Resources/config/routing.yml"
+    prefix:   /
+
+system_project:
+    resource: "@SystemProjectBundle/Resources/config/routing.yml"
+    prefix:   /
+
+system_resource:
+    resource: "@SystemResourceBundle/Resources/config/routing.yml"
+    prefix:   /
+
 oosd_soil_tech:
     resource: "@OOSDSoilTechBundle/Resources/config/routing.yml"
     prefix:   /

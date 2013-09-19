@@ -1,0 +1,7 @@
+parameters:
+#    system_client.example.class: System\ClientBundle\Example
+
+services:
+#    system_client.example:
+#        class: %system_client.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
