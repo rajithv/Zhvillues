@@ -2868,6 +2868,10 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\vendor\\symfony\\swiftmailer-bundle\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', 'Swiftmailer');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views', 'Doctrine');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\OOSD\\SoilTechBundle/Resources/views', 'OOSDSoilTech');
+        $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ResourceBundle/Resources/views', 'SystemResource');
+        $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ProjectBundle/Resources/views', 'SystemProject');
+        $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle/Resources/views', 'SystemClient');
+        $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\TrackingBundle/Resources/views', 'SystemTracking');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\Acme\\DemoBundle/Resources/views', 'AcmeDemo');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
@@ -3319,6 +3323,10 @@ class appDevDebugProjectContainer extends Container
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'OOSDSoilTechBundle' => 'OOSD\\SoilTechBundle\\OOSDSoilTechBundle',
+                'SystemResourceBundle' => 'System\\ResourceBundle\\SystemResourceBundle',
+                'SystemProjectBundle' => 'System\\ProjectBundle\\SystemProjectBundle',
+                'SystemClientBundle' => 'System\\ClientBundle\\SystemClientBundle',
+                'SystemTrackingBundle' => 'System\\TrackingBundle\\SystemTrackingBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
