@@ -11,9 +11,10 @@ class DefaultController extends Controller
         return $this->render('OOSDSoilTechBundle:Default:index.html.twig', array('name' => $name));
     }
     
-    public function newMachineryAction($name)
+    /*public function newMachineryAction($name)
     {
         
         return $this->render($view);
-    }
+    }*/
+
 }

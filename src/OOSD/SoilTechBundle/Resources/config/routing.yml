@@ -5,3 +5,7 @@ oosd_soil_tech_homepage:
 new_machinery:
     pattern: /newMachinery/{name}
     defaults: { _controller: OOSDSoilTechBundle:Page:newMachinery }
+
+about_us:
+    pattern: /about
+    defaults: {_controller: OOSDSoilTechBundle:About:aboutUs }
