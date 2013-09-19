@@ -1,3 +1,9 @@
 oosd_soil_tech_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: OOSDSoilTechBundle:Default:index }
+
+contact:
+    pattern:     /contact
+    defaults: { _controller: OOSDSoilTechBundle:Welcome:index }
+#    methods:  [GET]
+    

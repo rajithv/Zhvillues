@@ -138,6 +138,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'oosd_soil_tech_homepage')), array (  '_controller' => 'OOSD\\SoilTechBundle\\Controller\\DefaultController::indexAction',));
         }
 
+        // contact
+        if ($pathinfo === '/contact') {
+            return array (  '_controller' => 'OOSD\\SoilTechBundle\\Controller\\WelcomeController::indexAction',  '_route' => 'contact',);
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
