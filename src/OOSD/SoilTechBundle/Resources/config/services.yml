@@ -1,0 +1,7 @@
+parameters:
+#    oosd_soil_tech.example.class: OOSD\SoilTechBundle\Example
+
+services:
+#    oosd_soil_tech.example:
+#        class: %oosd_soil_tech.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

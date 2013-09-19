@@ -1,0 +1,4 @@
+oosd_soil_tech:
+    resource: "@OOSDSoilTechBundle/Resources/config/routing.yml"
+    prefix:   /
+

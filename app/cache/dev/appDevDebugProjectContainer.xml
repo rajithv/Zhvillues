@@ -16,6 +16,7 @@
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
+      <parameter key="OOSDSoilTechBundle">OOSD\SoilTechBundle\OOSDSoilTechBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -26,7 +27,7 @@
     <parameter key="database_driver">pdo_mysql</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port">null</parameter>
-    <parameter key="database_name">symfony</parameter>
+    <parameter key="database_name">soiltech</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
@@ -2146,7 +2147,7 @@
     <service id="doctrine.dbal.logger.profiling.default" class="Doctrine\DBAL\Logging\DebugStack" public="false"/>
     <service id="doctrine.dbal.default_connection" class="stdClass" factory-method="createConnection" factory-service="doctrine.dbal.connection_factory">
       <argument type="collection">
-        <argument key="dbname">symfony</argument>
+        <argument key="dbname">soiltech</argument>
         <argument key="host">127.0.0.1</argument>
         <argument key="port">null</argument>
         <argument key="user">root</argument>
@@ -2628,6 +2629,10 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\Zhvillues\vendor\doctrine\doctrine-bundle\Doctrine\Bundle\DoctrineBundle/Resources/views</argument>
         <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\Zhvillues\src\OOSD\SoilTechBundle/Resources/views</argument>
+        <argument>OOSDSoilTech</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\Zhvillues\src\Acme\DemoBundle/Resources/views</argument>

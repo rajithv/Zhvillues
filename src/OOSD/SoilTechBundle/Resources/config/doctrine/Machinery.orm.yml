@@ -1,0 +1,17 @@
+OOSD\SoilTechBundle\Entity\Machinery:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 255
+        date:
+            type: date
+        capacity:
+            type: decimal
+    lifecycleCallbacks: {  }
