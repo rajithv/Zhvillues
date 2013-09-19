@@ -10,8 +10,6 @@ OOSD\SoilTechBundle\Entity\Machinery:
         name:
             type: string
             length: 255
-        date:
-            type: date
         capacity:
             type: decimal
     lifecycleCallbacks: {  }
