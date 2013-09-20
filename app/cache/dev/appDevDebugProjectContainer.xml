@@ -2215,7 +2215,8 @@
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
             <argument type="collection">
-              <argument key="OOSDSoilTechBundle">OOSD\SoilTechBundle\Entity</argument>
+              <argument key="SystemResourceBundle">System\ResourceBundle\Entity</argument>
+              <argument key="SystemClientBundle">System\ClientBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2252,14 +2253,29 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
                       <argument type="collection">
-                        <argument key="C:\xampp\htdocs\Zhvillues\src\OOSD\SoilTechBundle\Resources\config\doctrine">OOSD\SoilTechBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
                       </call>
                     </service>
                   </argument>
-                  <argument>OOSD\SoilTechBundle\Entity</argument>
+                  <argument>System\ResourceBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>System\ClientBundle\Entity</argument>
                 </call>
               </service>
             </argument>

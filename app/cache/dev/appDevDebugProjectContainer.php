@@ -554,14 +554,15 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_321eba11defaffe40ba5566e347413cd');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Zhvillues\\src\\OOSD\\SoilTechBundle\\Resources\\config\\doctrine' => 'OOSD\\SoilTechBundle\\Entity'));
+        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ResourceBundle\\Resources\\config\\doctrine' => 'System\\ResourceBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle\\Resources\\config\\doctrine' => 'System\\ClientBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
         $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $e->addDriver($d, 'OOSD\\SoilTechBundle\\Entity');
+        $e->addDriver($d, 'System\\ResourceBundle\\Entity');
+        $e->addDriver($d, 'System\\ClientBundle\\Entity');
 
         $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('OOSDSoilTechBundle' => 'OOSD\\SoilTechBundle\\Entity'));
+        $f->setEntityNamespaces(array('SystemResourceBundle' => 'System\\ResourceBundle\\Entity', 'SystemClientBundle' => 'System\\ClientBundle\\Entity'));
         $f->setMetadataCacheImpl($a);
         $f->setQueryCacheImpl($b);
         $f->setResultCacheImpl($c);

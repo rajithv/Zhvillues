@@ -1,3 +1,15 @@
 system_resource_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: SystemResourceBundle:Default:index }
+
+add_new_consumable:
+    pattern: /addNewConsumable
+    defaults: { _controller: SystemResourceBundle:NewConsumable:add}
+
+add_new_machinery:
+    pattern: /addNewMachinery
+    defaults: { _controller: SystemResourceBundle:NewMachinery:add }
+
+add_new_hr:
+    pattern: /addNewHR
+    defaults: { _controller: SystemResourceBundle:NewHR:add }
