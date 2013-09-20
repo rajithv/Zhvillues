@@ -3,22 +3,47 @@
 namespace System\ResourceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use System\ResourceBundle\Entity\Consumable;
+use Symfony\Component\HttpFoundation\Request;
 
 class NewConsumableController extends Controller
 {
-    public function addAction()
+    public function addAction(Request $request)
     {
         //return $this->render('SystemResourceBundle:Pages:addNewConsumable.html.twig');
         
-        $form = $this->createFormBuilder()
-                ->add('Consumable_Code', 'text')
-                ->add('Name', 'text')
-                ->add('Quantity', 'text')
-                ->add('Unit_Value', 'text')
-                ->add('Hourly_Rate', 'text')
+        $message = $request -> get('message', null);
+        
+        $consumable = new Consumable();
+        
+        $form = $this->createFormBuilder($consumable)
+                //->add('id', 'text')
+                ->add('name', 'text')
+                ->add('quantity', 'text')
+                ->add('unitValue', 'text')
+                //->add('Hourly_Rate', 'text')
                 ->add('create', 'submit')
                 ->add('clear', 'submit')
                 ->getForm();
-         return $this->render('SystemResourceBundle:Pages:addNewConsumable.html.twig', array('form' => $form->createView()));
+        
+        $form->handleRequest($request);
+        
+                
+        if($form->isValid()){
+            
+            $consumable=$form->getData();
+            $consumable->setPendingOrders(0);
+            $consumable->setToBeOrdered(0);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($consumable);
+            $em->flush();
+            
+            $response = array(
+              'message' => "New client added successfully.",
+            );
+        
+            return $this->redirect($this->generateUrl('add_new_consumable', $response));
+        }
+        return $this->render('SystemResourceBundle:Pages:addNewConsumable.html.twig', array('form' => $form->createView(),'message' => $message));
     }
 }
