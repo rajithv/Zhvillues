@@ -2,17 +2,5 @@
 
 <p>Enter the details of the new machinery below</p>
 <div>
-    <li>Code: <input type="text" name="inCode"></li>
-    <li>Name: <input type="text" name="inName"></li>
-    <li>Purchase Vale:<input type="text" name="inPurchaseValue"></li>
-    <!-- At the beginning this value will be the Net Precent Value of the Machine -->
-    <li>Operation Cost per Hour:<input type="text" name="inRate"></li>
-    <li>Intended usefull life time:<input type="text" name="inLifeTime"></li>
-    <!-- There are three more fields in the Database,
-            - Allocated Project
-            - Current Status
-            - Depreciation Rate
-    These are not requested as inputs, they must be altered accordingly when the entry is recorded-->
+   {{form(form)}}
 </div> 
- <input type="submit" value="Submit">
- <input type="submit" value="Clear">

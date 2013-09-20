@@ -20,17 +20,13 @@ class __TwigTemplate_57a27c3dbd8c52d7304f73711d282320 extends Twig_Template
 
 <p>Enter the details of the new consumables below</p>
 <div>
-    <li>Code: <input type=\"text\" name=\"inCode\"></li>
-    <li>Name: <input type=\"text\" name=\"inName\"></li>
-    <li>Quantity:<input type=\"text\" name=\"inQuantity\"></li>
-    <li>Unit Value:<input type=\"text\" name=\"inUnitValue\"></li>
-    <!-- There are two more fields in the Database,
-            - Pending Orders
-            - To Be Ordered 
-    These are not requested as inputs, they must be altered accordingly when the entry is recorded-->
-</div> 
- <input type=\"submit\" value=\"Submit\">
- <input type=\"submit\" value=\"Clear\">";
+
+    ";
+        // line 6
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
+        echo "
+    
+</div> ";
     }
 
     public function getTemplateName()
@@ -38,8 +34,13 @@ class __TwigTemplate_57a27c3dbd8c52d7304f73711d282320 extends Twig_Template
         return "SystemResourceBundle:Pages:addNewConsumable.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  19 => 1,);
+        return array (  26 => 6,  19 => 1,);
     }
 }
