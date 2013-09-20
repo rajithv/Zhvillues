@@ -21,9 +21,6 @@ class NewMachineryController extends Controller
                 ->add('netPresentValue', 'text')
                 ->add('opCostHour', 'text')
                 ->add('depRate', 'text')
-                ->add('project', null)
-                ->add('status', null)
-                ->add('operator', null)
                 ->add('Submit', 'submit')
                 ->add('Clear', 'submit')
                 ->getForm();
@@ -33,6 +30,9 @@ class NewMachineryController extends Controller
         if($form->isValid()){
             
             $machinery=$form->getData();
+            $machinery->setProject(null);
+            $machinery->setStatus(null);
+            $machinery->setOperator(null);
             $em = $this->getDoctrine()->getManager();
             $em->persist($machinery);
             $em->flush();
