@@ -1,3 +1,11 @@
 system_project_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: SystemProjectBundle:Default:index }
+
+create_project:
+    pattern: /createProject
+    defaults: { _controller: SystemProjectBundle:ProjectCreation:createProject }
+
+create_budget:
+    pattern: /createBudget
+    defaults: { _controller: SystemProjectBundle:BudgetCreation:createBudget }

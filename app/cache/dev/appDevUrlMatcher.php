@@ -133,9 +133,53 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // oosd_soil_tech_homepage
+        // system_tracking_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'oosd_soil_tech_homepage')), array (  '_controller' => 'OOSD\\SoilTechBundle\\Controller\\DefaultController::indexAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'system_tracking_homepage')), array (  '_controller' => 'System\\TrackingBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        // create_actual_expences
+        if ($pathinfo === '/createActualExpences') {
+            return array (  '_controller' => 'System\\TrackingBundle\\Controller\\ActualExpencesController::createActualExpencesAction',  '_route' => 'create_actual_expences',);
+        }
+
+        if (0 === strpos($pathinfo, '/hello')) {
+            // system_client_homepage
+            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'system_client_homepage')), array (  '_controller' => 'System\\ClientBundle\\Controller\\DefaultController::indexAction',));
+            }
+
+            // system_project_homepage
+            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'system_project_homepage')), array (  '_controller' => 'System\\ProjectBundle\\Controller\\DefaultController::indexAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/create')) {
+            // create_project
+            if ($pathinfo === '/createProject') {
+                return array (  '_controller' => 'System\\ProjectBundle\\Controller\\ProjectCreationController::createProjectAction',  '_route' => 'create_project',);
+            }
+
+            // create_budget
+            if ($pathinfo === '/createBudget') {
+                return array (  '_controller' => 'System\\ProjectBundle\\Controller\\BudgetCreationController::createBudgetAction',  '_route' => 'create_budget',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/hello')) {
+            // system_resource_homepage
+            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'system_resource_homepage')), array (  '_controller' => 'System\\ResourceBundle\\Controller\\DefaultController::indexAction',));
+            }
+
+            // oosd_soil_tech_homepage
+            if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'oosd_soil_tech_homepage')), array (  '_controller' => 'OOSD\\SoilTechBundle\\Controller\\DefaultController::indexAction',));
+            }
+
         }
 
         // new_machinery
