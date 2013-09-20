@@ -2,14 +2,7 @@
 
 <p>Enter the details of the new consumables below</p>
 <div>
-    <li>Code: <input type="text" name="inCode"></li>
-    <li>Name: <input type="text" name="inName"></li>
-    <li>Quantity:<input type="text" name="inQuantity"></li>
-    <li>Unit Value:<input type="text" name="inUnitValue"></li>
-    <!-- There are two more fields in the Database,
-            - Pending Orders
-            - To Be Ordered 
-    These are not requested as inputs, they must be altered accordingly when the entry is recorded-->
+
+    {{form(form)}}
+    
 </div> 
- <input type="submit" value="Submit">
- <input type="submit" value="Clear">
