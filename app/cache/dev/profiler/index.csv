@@ -80,6 +80,7 @@ cedfa5,127.0.0.1,GET,http://localhost/Zhvillues/web/app_dev.php/addClient,137961
 e4e0c7,127.0.0.1,POST,http://localhost/Zhvillues/web/app_dev.php/addClient,1379614157,
 e96d4d,127.0.0.1,POST,http://localhost/Zhvillues/web/app_dev.php/addClient,1379614193,
 7fd53e,127.0.0.1,POST,http://localhost/Zhvillues/web/app_dev.php/addClient,1379614220,
+<<<<<<< HEAD
 9c1c69,::1,GET,http://localhost/Zhvillues/web/app_dev.php/newClient,1379645455,
 52fd8b,::1,GET,http://localhost/Zhvillues/web/app_dev.php/newClient,1379645456,
 633562,::1,GET,http://localhost/Zhvillues/web/app_dev.php/addClient,1379645481,
@@ -87,3 +88,7 @@ e96d4d,127.0.0.1,POST,http://localhost/Zhvillues/web/app_dev.php/addClient,13796
 340b31,::1,GET,http://localhost/Zhvillues/web/app_dev.php/addNewConsumable,1379645676,
 d347ce,::1,GET,http://localhost/Zhvillues/web/app_dev.php/addClient,1379645685,
 ad544b,::1,GET,http://localhost/Zhvillues/web/app_dev.php/addNewHR,1379645755,
+=======
+88c533,127.0.0.1,GET,http://localhost/Zhvillues/web/app_dev.php/addClient,1379646246,
+>>>>>>> Sanka
+91ea76,127.0.0.1,GET,http://localhost/Zhvillues/web/app_dev.php/addClient,1379649375,
