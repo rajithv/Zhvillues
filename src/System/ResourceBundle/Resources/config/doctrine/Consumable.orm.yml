@@ -1,4 +1,4 @@
-OOSD\SoilTechBundle\Entity\Machinery:
+System\ResourceBundle\Entity\Consumable:
     type: entity
     table: null
     fields:
@@ -10,6 +10,12 @@ OOSD\SoilTechBundle\Entity\Machinery:
         name:
             type: string
             length: 255
-        capacity:
-            type: decimal
+        quantity:
+            type: float
+        unitValue:
+            type: float
+        pendingOrders:
+            type: float
+        toBeOrdered:
+            type: float
     lifecycleCallbacks: {  }

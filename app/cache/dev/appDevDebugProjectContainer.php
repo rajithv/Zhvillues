@@ -554,14 +554,16 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_321eba11defaffe40ba5566e347413cd');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Zhvillues\\src\\OOSD\\SoilTechBundle\\Resources\\config\\doctrine' => 'OOSD\\SoilTechBundle\\Entity'));
+        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ResourceBundle\\Resources\\config\\doctrine' => 'System\\ResourceBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle\\Resources\\config\\doctrine' => 'System\\ClientBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
         $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $e->addDriver($d, 'OOSD\\SoilTechBundle\\Entity');
+        $e->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => 'C:\\xampp\\htdocs\\Zhvillues\\src\\OOSD\\SoilTechBundle\\Entity')), 'OOSD\\SoilTechBundle\\Entity');
+        $e->addDriver($d, 'System\\ResourceBundle\\Entity');
+        $e->addDriver($d, 'System\\ClientBundle\\Entity');
 
         $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('OOSDSoilTechBundle' => 'OOSD\\SoilTechBundle\\Entity'));
+        $f->setEntityNamespaces(array('OOSDSoilTechBundle' => 'OOSD\\SoilTechBundle\\Entity', 'SystemResourceBundle' => 'System\\ResourceBundle\\Entity', 'SystemClientBundle' => 'System\\ClientBundle\\Entity'));
         $f->setMetadataCacheImpl($a);
         $f->setQueryCacheImpl($b);
         $f->setResultCacheImpl($c);
@@ -3724,7 +3726,7 @@ class appDevDebugProjectContainer extends Container
             ),
             'assetic.java.bin' => 'C:\\Windows\\system32\\java.EXE',
             'assetic.node.bin' => '/usr/bin/node',
-            'assetic.ruby.bin' => '/usr/bin/ruby',
+            'assetic.ruby.bin' => 'C:\\Ruby193\\bin\\ruby.EXE',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
             'assetic.twig_extension.functions' => array(

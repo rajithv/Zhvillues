@@ -1,0 +1,24 @@
+System\ClientBundle\Entity\Client:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        code:
+            type: string
+            length: 255
+        name:
+            type: string
+            length: 255
+        contactPerson:
+            type: string
+            length: 255
+        tel:
+            type: string
+            length: 255
+        address:
+            type: text
+    lifecycleCallbacks: {  }
