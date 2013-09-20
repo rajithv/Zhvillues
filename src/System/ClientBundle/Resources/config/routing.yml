@@ -1,3 +1,7 @@
 system_client_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: SystemClientBundle:Default:index }
+
+add:
+    pattern: /addClient
+    defaults: { _controller: SystemClientBundle:AddClient:add }
