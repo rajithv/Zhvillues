@@ -402,7 +402,7 @@
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">C:\Windows\system32\java.EXE</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
-    <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
+    <parameter key="assetic.ruby.bin">C:\Ruby193\bin\ruby.EXE</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
     <parameter key="assetic.twig_extension.functions" type="collection"/>
@@ -2216,6 +2216,8 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="OOSDSoilTechBundle">OOSD\SoilTechBundle\Entity</argument>
+              <argument key="SystemResourceBundle">System\ResourceBundle\Entity</argument>
+              <argument key="SystemClientBundle">System\ClientBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2250,16 +2252,42 @@
               <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false">
                 <call method="addDriver">
                   <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\xampp\htdocs\Zhvillues\src\OOSD\SoilTechBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>OOSD\SoilTechBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
                       <argument type="collection">
-                        <argument key="C:\xampp\htdocs\Zhvillues\src\OOSD\SoilTechBundle\Resources\config\doctrine">OOSD\SoilTechBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
                       </call>
                     </service>
                   </argument>
-                  <argument>OOSD\SoilTechBundle\Entity</argument>
+                  <argument>System\ResourceBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>System\ClientBundle\Entity</argument>
                 </call>
               </service>
             </argument>
