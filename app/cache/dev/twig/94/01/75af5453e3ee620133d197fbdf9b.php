@@ -20,8 +20,6 @@ class __TwigTemplate_940175af5453e3ee620133d197fbdf9b extends Twig_Template
 
 <p>Enter the details of the new client below</p>
 
-<!-- 
-
 <div>
     <li>Client Code: <input type=\"text\" name=\"inCode\"></li>
     <li>Name: <input type=\"text\" name=\"inName\"></li>
@@ -33,12 +31,8 @@ class __TwigTemplate_940175af5453e3ee620133d197fbdf9b extends Twig_Template
  <input type=\"submit\" value=\"Submit\">
  <input type=\"submit\" value=\"Clear\">
 
- -->
- <div>";
-        // line 19
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
-        echo "</div>
- ";
+ 
+";
     }
 
     public function getTemplateName()
@@ -46,13 +40,8 @@ class __TwigTemplate_940175af5453e3ee620133d197fbdf9b extends Twig_Template
         return "SystemClientBundle:Pages:addClient.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  39 => 19,  19 => 1,);
+        return array (  19 => 1,);
     }
 }
