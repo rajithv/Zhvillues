@@ -17,6 +17,10 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="OOSDSoilTechBundle">OOSD\SoilTechBundle\OOSDSoilTechBundle</parameter>
+      <parameter key="SystemResourceBundle">System\ResourceBundle\SystemResourceBundle</parameter>
+      <parameter key="SystemProjectBundle">System\ProjectBundle\SystemProjectBundle</parameter>
+      <parameter key="SystemClientBundle">System\ClientBundle\SystemClientBundle</parameter>
+      <parameter key="SystemTrackingBundle">System\TrackingBundle\SystemTrackingBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -2649,6 +2653,22 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\Zhvillues\src\OOSD\SoilTechBundle/Resources/views</argument>
         <argument>OOSDSoilTech</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle/Resources/views</argument>
+        <argument>SystemResource</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle/Resources/views</argument>
+        <argument>SystemProject</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\Zhvillues\src\System\ClientBundle/Resources/views</argument>
+        <argument>SystemClient</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\Zhvillues\src\System\TrackingBundle/Resources/views</argument>
+        <argument>SystemTracking</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\Zhvillues\src\Acme\DemoBundle/Resources/views</argument>
