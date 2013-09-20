@@ -16,23 +16,23 @@ class __TwigTemplate_940175af5453e3ee620133d197fbdf9b extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<h1>Add new Client</h1> 
+        echo "<html>
+    <head>
+        <title>Add New Client</title>
+    </head>
+    
 
-<p>Enter the details of the new client below</p>
-
-<div>
-    <li>Client Code: <input type=\"text\" name=\"inCode\"></li>
-    <li>Name: <input type=\"text\" name=\"inName\"></li>
-    <li>Contact Person:<input type=\"text\" name=\"inDepartment\"></li>
-    <li>Contact Details:<input type=\"text\" name=\"inNICNumber\"></li>
-    <li>Project:<input type=\"text\" name=\"inAllocatedProject\"></li>
-    Dont think this is complete yet
-</div> 
- <input type=\"submit\" value=\"Submit\">
- <input type=\"submit\" value=\"Clear\">
-
- 
-";
+    <body>
+        ";
+        // line 8
+        echo twig_escape_filter($this->env, (isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "html", null, true);
+        echo "
+       ";
+        // line 9
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
+        echo "
+    </body>
+</html>";
     }
 
     public function getTemplateName()
@@ -40,8 +40,13 @@ class __TwigTemplate_940175af5453e3ee620133d197fbdf9b extends Twig_Template
         return "SystemClientBundle:Pages:addClient.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  19 => 1,);
+        return array (  32 => 9,  28 => 8,  19 => 1,);
     }
 }
