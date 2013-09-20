@@ -16,20 +16,18 @@ class __TwigTemplate_88b245e16150228e9e3a471fa4bf3108 extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<h1>New Recruitments</h1>
-
-<p>Enter the details of the new employee below</p>
-<div>
-    <li>Emloyee Code: <input type=\"text\" name=\"inCode\"></li>
-    <li>Name: <input type=\"text\" name=\"inName\"></li>
-    <li>Department:<input type=\"text\" name=\"inDepartment\"></li>
-    <li>NIC Number:<input type=\"text\" name=\"inNICNumber\"></li>
-    <li>Hourly Rate:<input type=\"text\" name=\"inHourlyRate\"></li>
-    <li>Allocated Project:<input type=\"text\" name=\"inAllocatedProject\"></li>
-    <!-- We could add a option list for the project by giving all the current projects..-->
-</div> 
- <input type=\"submit\" value=\"Submit\">
- <input type=\"submit\" value=\"Clear\">";
+        echo "<html>
+    <head>
+        <title>Add New Human Resource</title>
+    </head>
+    
+    <body>
+       ";
+        // line 7
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
+        echo "
+    </body>
+</html>";
     }
 
     public function getTemplateName()
@@ -37,8 +35,13 @@ class __TwigTemplate_88b245e16150228e9e3a471fa4bf3108 extends Twig_Template
         return "SystemResourceBundle:Pages:addNewHR.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  19 => 1,);
+        return array (  27 => 7,  19 => 1,);
     }
 }
