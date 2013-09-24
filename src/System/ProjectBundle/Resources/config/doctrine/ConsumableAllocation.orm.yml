@@ -1,0 +1,16 @@
+System\ProjectBundle\Entity\ConsumableAllocation:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        consumableID:
+            type: string
+            length: 255
+        projectID:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

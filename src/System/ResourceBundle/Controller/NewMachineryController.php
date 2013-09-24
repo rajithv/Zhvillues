@@ -30,9 +30,9 @@ class NewMachineryController extends Controller
         if($form->isValid()){
             
             $machinery=$form->getData();
-            $machinery->setProject(null);
-            $machinery->setStatus(null);
-            $machinery->setOperator(null);
+            $machinery->setProject("");
+            $machinery->setStatus("");
+            $machinery->setOperator("");
             $em = $this->getDoctrine()->getManager();
             $em->persist($machinery);
             $em->flush();
