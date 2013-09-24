@@ -182,3 +182,7 @@ f822cc,127.0.0.1,GET,http://localhost/Zhvillues/web/app_dev.php/addNewConsumable
 58c8bb,127.0.0.1,GET,http://localhost/Zhvillues/web/app_dev.php/addNewConsumable,1379671188,
 42d051,127.0.0.1,POST,http://localhost/Zhvillues/web/app_dev.php/addNewConsumable,1379671194,
 2e24b1,127.0.0.1,GET,http://localhost/Zhvillues/web/app_dev.php/addNewConsumable?message=New%20client%20added%20successfully.,1379671194,
+cfbef5,::1,GET,http://localhost/Zhvillues/web/app_dev.php/addNewMachinery,1380038268,
+5aef5d,::1,GET,http://localhost/Zhvillues/web/app_dev.php/addNewMachinery,1380038426,
+4ba824,::1,GET,http://localhost/Zhvillues/web/app_dev.php/addNewMachinery,1380038471,
+d216e6,::1,POST,http://localhost/Zhvillues/web/app_dev.php/addNewMachinery,1380038471,

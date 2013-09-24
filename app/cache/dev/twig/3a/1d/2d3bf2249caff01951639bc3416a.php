@@ -16,12 +16,16 @@ class __TwigTemplate_3a1d2d3bf2249caff01951639bc3416a extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<h1>Purchase new machinery</h1>
+        echo "<head>
+<title>Add New Machinery</title>
+</head>
+
+<h1>Purchase new machinery</h1>
 
 <p>Enter the details of the new machinery below</p>
 <div>
    ";
-        // line 5
+        // line 9
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
         echo "
 </div> 
@@ -40,6 +44,6 @@ class __TwigTemplate_3a1d2d3bf2249caff01951639bc3416a extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  25 => 5,  19 => 1,);
+        return array (  29 => 9,  19 => 1,);
     }
 }
