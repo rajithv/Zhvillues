@@ -1,0 +1,93 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}SystemTestBundle:Home:Home{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Home:Home page</h1>
+
+{{name}}
+
+<table>
+
+<tr>
+<td> <b>Path</b> </td>
+<td> <b>Description</b></td>
+<td> <b>Status - created / tested / working / finalized / etc.</b> </td>
+<td> <b>Authorization Level</b></td>
+</tr>
+
+
+<tr>
+<td> <a href=""><del>system_project_homepage</del><a/> </td>
+<td> No need </td>
+<td>  - </td>
+</tr>
+
+<tr>
+<td> <a href="{{ path('create_project') }}">create_project<a/> </td>
+<td> Create a new project</td>
+<td> created </td>
+</tr>
+
+<tr>
+<td> <a href="{{ path('create_budget') }}">create_budget<a/> </td>
+<td> Create a new budget</td>
+<td> created </td>
+</tr>
+
+<tr>
+<td> <a href="">system_test_homepage<a/> </td>
+<td> No need </td>
+<td> - </td>
+</tr>
+
+<tr>
+<td> <a href="">system_client_homepage<a/> </td>
+<td> No need </td>
+<td> - </td>
+</tr>
+
+<tr>
+<td> <a href="{{ path('add') }}">add<a/> </td>
+<td> Add a new client </td>
+<td> created </td>
+</tr>
+
+<tr>
+<td> <a href="">system_resource_homepage<a/> </td>
+<td> No need </td>
+<td>  - </td>
+</tr>
+
+<tr>
+<td> <a href="{{ path('add_new_consumable') }}">add_new_consumable<a/> </td>
+<td> Add new consumable </td>
+<td> created </td>
+</tr>
+
+<tr>
+<td> <a href="{{ path('add_new_machinery') }}">add_new_machinery<a/> </td>
+<td> Add new machinery </td>
+<td> created </td>
+</tr>
+
+<tr>
+<td> <a href="{{ path('add_new_hr') }}">add_new_hr<a/> </td>
+<td> Add a new human resource</td>
+<td> created </td>
+</tr>
+
+<tr>
+<td> <a href="">system_tracking_homepage<a/> </td>
+<td> No need</td>
+<td> - </td>
+</tr>
+
+<tr>
+<td> <a href="{{ path('create_actual_expences') }}">create_actual_expences<a/> </td>
+<td> Create an expense</td>
+<td> created </td>
+</tr>
+</table>
+
+{% endblock %}
