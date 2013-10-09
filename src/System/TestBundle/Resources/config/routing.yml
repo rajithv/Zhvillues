@@ -1,0 +1,7 @@
+system_test_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SystemTestBundle:Default:index }
+
+_home:
+    pattern: /Home
+    defaults: { _controller: SystemTestBundle:Home:Home }

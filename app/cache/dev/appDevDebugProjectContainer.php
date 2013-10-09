@@ -2875,6 +2875,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ProjectBundle/Resources/views', 'SystemProject');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle/Resources/views', 'SystemClient');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\TrackingBundle/Resources/views', 'SystemTracking');
+        $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\TestBundle/Resources/views', 'SystemTest');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\Acme\\DemoBundle/Resources/views', 'AcmeDemo');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
@@ -3330,6 +3331,7 @@ class appDevDebugProjectContainer extends Container
                 'SystemProjectBundle' => 'System\\ProjectBundle\\SystemProjectBundle',
                 'SystemClientBundle' => 'System\\ClientBundle\\SystemClientBundle',
                 'SystemTrackingBundle' => 'System\\TrackingBundle\\SystemTrackingBundle',
+                'SystemTestBundle' => 'System\\TestBundle\\SystemTestBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',

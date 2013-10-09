@@ -1,3 +1,7 @@
+system_test:
+    resource: "@SystemTestBundle/Resources/config/routing.yml"
+    prefix:   /
+
 system_tracking:
     resource: "@SystemTrackingBundle/Resources/config/routing.yml"
     prefix:   /
