@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}SystemTestBundle:Home:Home{% endblock %}
+
+{% block body %}
+Hello Project Manager, You can add Resources from the links
+<div> </div>
+
+<table>
+<tr>
+<td> 
+       <form action="{{ path('add_new_consumable') }}" method="post">
+       <button type="submit">Add a New Consumable</button>
+       </form></td>
+
+</tr>
+
+<tr>
+<td> 
+        <form action="{{ path('add_new_machinery') }}" method="post">
+        <button type="submit">Add a New Machinary</button>
+        </form></td>
+</tr>
+
+<tr>
+<td> 
+        <form action="{{ path('add_new_hr') }}" method="post">
+        <button type="submit">Add a New HR</button>
+        </form></td>
+</tr>
+
+</table>
+{% endblock %}
