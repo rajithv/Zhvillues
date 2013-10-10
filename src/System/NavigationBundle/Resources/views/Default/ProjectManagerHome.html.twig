@@ -35,9 +35,22 @@
 
 <tr>
 <td>
-        <form action="{{ path('createResource') }}" method="post">
-        <button type="submit">Add a New Resource</button>
-        </form></td> </td>
+    <h4>Add new resources</h4>
+        <td> 
+       <form action="{{ path('add_new_consumable') }}" method="post">
+       <button type="submit">Add a New Consumable</button>
+       </form></td>
+       
+       <td> 
+        <form action="{{ path('add_new_machinery') }}" method="post">
+        <button type="submit">Add a New Machinary</button>
+        </form></td>
+        
+       <td> 
+       <form action="{{ path('add_new_hr') }}" method="post">
+        <button type="submit">Add a New HR</button>
+        </form></td>
+       
 </tr>
 
 
