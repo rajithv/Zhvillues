@@ -22,6 +22,10 @@ system_tracking:
 system_client:
     resource: "@SystemClientBundle/Resources/config/routing.yml"
     prefix:   /
+    
+system_navigation:
+    resource: "@SystemNavigationBundle/Resources/config/routing.yml"
+    prefix:   /
 
 system_project:
     resource: "@SystemProjectBundle/Resources/config/routing.yml"

@@ -1,0 +1,52 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}SystemTestBundle:Home:Home{% endblock %}
+
+{% block body %}
+<h1>Hello Project Manager {{ name }}!</h1>
+<div> </div>
+<h2>Adding new items</h2>
+<table>
+
+<tr>
+<td> 
+    
+    <form action="{{ path('add') }}" method="post">
+    <button type="submit">Add a New Client</button>
+    </form></td>
+    
+</tr>
+
+<tr>
+<td> 
+    
+    <form action="{{ path('create_budget') }}" method="post">
+    <button type="submit">Add a New Budget</button>
+    </form></td>
+    
+</tr>
+
+<tr>
+<td> 
+        <form action="{{ path('create_project') }}" method="post">
+        <button type="submit">Add a New Project</button>
+        </form></td>
+</tr>
+
+<tr>
+<td>
+        <form action="{{ path('createResource') }}" method="post">
+        <button type="submit">Add a New Resource</button>
+        </form></td> </td>
+</tr>
+
+
+</table>
+
+<h2>Checking excisting projects</h2>
+
+<td>
+       
+        <button type="submit">Select a project and get reports</button>
+
+{% endblock %}

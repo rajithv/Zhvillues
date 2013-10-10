@@ -1,0 +1,15 @@
+system_navigation_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SystemNavigationBundle:Default:index }
+
+projectManager:
+  pattern: /projectManager/{name}
+  defaults: {_controller: SystemNavigationBundle:ProjectManager:index }
+  
+OnSiteManager:
+  pattern: /onSiteManager/{name}
+  defaults: {_controller: SystemNavigationBundle:OnSiteManager:index}
+  
+createResource:
+  pattern: /createResource
+  defaults: {_controller: SystemNavigationBundle:ProjectManagerResource:index}

@@ -186,6 +186,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'System\\ClientBundle\\Controller\\AddClientController::addAction',  '_route' => 'add',);
         }
 
+        // system_navigation_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'system_navigation_homepage')), array (  '_controller' => 'System\\NavigationBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        // projectManager
+        if (0 === strpos($pathinfo, '/projectManager') && preg_match('#^/projectManager/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'projectManager')), array (  '_controller' => 'System\\NavigationBundle\\Controller\\ProjectManagerController::indexAction',));
+        }
+
+        // OnSiteManager
+        if (0 === strpos($pathinfo, '/onSiteManager') && preg_match('#^/onSiteManager/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'OnSiteManager')), array (  '_controller' => 'System\\NavigationBundle\\Controller\\OnSiteManagerController::indexAction',));
+        }
+
+        // createResource
+        if ($pathinfo === '/createResource') {
+            return array (  '_controller' => 'System\\NavigationBundle\\Controller\\ProjectManagerResourceController::indexAction',  '_route' => 'createResource',);
+        }
+
         // system_project_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'system_project_homepage')), array (  '_controller' => 'System\\ProjectBundle\\Controller\\DefaultController::indexAction',));
