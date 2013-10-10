@@ -1,0 +1,26 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}SystemTestBundle:Home:Home{% endblock %}
+
+{% block body %}
+Hello Project Manager {{ name }}!
+<div> </div>
+
+<table>
+
+<tr>
+<td> <a href="{{ path('add') }}">Add a New Client<a/> </td>
+</tr>
+
+
+<tr>
+<td> <a href="{{ path('create_project') }}">Add a New Project<a/> </td>
+</tr>
+
+<tr>
+<td> <a href="{{ path('createResource') }}">Add a New Resource<a/> </td>
+</tr>
+
+
+</table?
+{% endblock %}

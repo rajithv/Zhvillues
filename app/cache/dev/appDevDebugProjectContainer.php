@@ -554,17 +554,17 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_321eba11defaffe40ba5566e347413cd');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ResourceBundle\\Resources\\config\\doctrine' => 'System\\ResourceBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ProjectBundle\\Resources\\config\\doctrine' => 'System\\ProjectBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle\\Resources\\config\\doctrine' => 'System\\ClientBundle\\Entity'));
+        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ResourceBundle\\Resources\\config\\doctrine' => 'System\\ResourceBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ProjectBundle\\Resources\\config\\doctrine' => 'System\\ProjectBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle\\Resources\\config\\doctrine' => 'System\\ClientBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\NavigationBundle\\Resources\\config\\doctrine' => 'System\\NavigationBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
         $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $e->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => 'C:\\xampp\\htdocs\\Zhvillues\\src\\OOSD\\SoilTechBundle\\Entity')), 'OOSD\\SoilTechBundle\\Entity');
         $e->addDriver($d, 'System\\ResourceBundle\\Entity');
         $e->addDriver($d, 'System\\ProjectBundle\\Entity');
         $e->addDriver($d, 'System\\ClientBundle\\Entity');
+        $e->addDriver($d, 'System\\NavigationBundle\\Entity');
 
         $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('OOSDSoilTechBundle' => 'OOSD\\SoilTechBundle\\Entity', 'SystemResourceBundle' => 'System\\ResourceBundle\\Entity', 'SystemProjectBundle' => 'System\\ProjectBundle\\Entity', 'SystemClientBundle' => 'System\\ClientBundle\\Entity'));
+        $f->setEntityNamespaces(array('SystemResourceBundle' => 'System\\ResourceBundle\\Entity', 'SystemProjectBundle' => 'System\\ProjectBundle\\Entity', 'SystemClientBundle' => 'System\\ClientBundle\\Entity', 'SystemNavigationBundle' => 'System\\NavigationBundle\\Entity'));
         $f->setMetadataCacheImpl($a);
         $f->setQueryCacheImpl($b);
         $f->setResultCacheImpl($c);
@@ -2876,6 +2876,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle/Resources/views', 'SystemClient');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\TrackingBundle/Resources/views', 'SystemTracking');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\TestBundle/Resources/views', 'SystemTest');
+        $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\NavigationBundle/Resources/views', 'SystemNavigation');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\src\\Acme\\DemoBundle/Resources/views', 'AcmeDemo');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('C:\\xampp\\htdocs\\Zhvillues\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
@@ -3332,6 +3333,7 @@ class appDevDebugProjectContainer extends Container
                 'SystemClientBundle' => 'System\\ClientBundle\\SystemClientBundle',
                 'SystemTrackingBundle' => 'System\\TrackingBundle\\SystemTrackingBundle',
                 'SystemTestBundle' => 'System\\TestBundle\\SystemTestBundle',
+                'SystemNavigationBundle' => 'System\\NavigationBundle\\SystemNavigationBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -3727,9 +3729,9 @@ class appDevDebugProjectContainer extends Container
             'assetic.variables' => array(
 
             ),
-            'assetic.java.bin' => 'C:\\Windows\\system32\\java.EXE',
+            'assetic.java.bin' => 'C:\\Program Files\\Java\\jre7\\bin\\java.EXE',
             'assetic.node.bin' => '/usr/bin/node',
-            'assetic.ruby.bin' => 'C:\\Ruby193\\bin\\ruby.EXE',
+            'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
             'assetic.twig_extension.functions' => array(
