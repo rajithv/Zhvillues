@@ -1,11 +1,68 @@
-<html>
-    <head>
-        <title>Add New Client</title>
-    </head>
-    
+{% extends "TwigBundle::layout.html.twig" %}
 
-    <body>
-        {{message}}
-       {{ form(form) }}
-    </body>
-</html>
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+{% endblock %}
+
+{% block title 'Add New Client' %}
+
+{% block body %}
+    {% block content_header %}
+
+    <!-- Logo -->
+    <div id="logo">
+        <h1 id="title"> Add New Client</h1><br>
+    </div>
+    <div style="clear: both"></div>
+    {% endblock %}
+
+    <div class="block">
+        {% block content %}
+        <form action="{{ path('add') }}" method="POST" id="contact_form">
+            <div>
+                {{ form_label(form.code,'Project Code') }}
+                {{ form_errors(form.code) }}
+                {{ form_widget(form.code) }}
+            </div><br>           
+            <div>
+                {{ form_label(form.name,'Client Name') }}
+                {{ form_errors(form.name) }}
+                {{ form_widget(form.name) }}
+            </div><br>       
+            <div>
+                {{ form_label(form.contactPerson,'Contact Person') }} 
+                {{ form_errors(form.contactPerson) }}
+                {{ form_widget(form.contactPerson) }}
+           </div><br>
+           <div>
+                {{ form_label(form.tel,'Telephone Number') }} 
+                {{ form_errors(form.tel) }}
+                {{ form_widget(form.tel) }}
+           </div><br>
+           <div>
+                {{ form_label(form.address,'Client Address') }}
+                {{ form_errors(form.address) }}
+                {{ form_widget(form.address) }}
+           </div><br>
+           <button type="submit" id="form_Submit" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Submit</span>
+                    </span>
+                </span>
+           </button>
+                                
+           <button type="reset" id="form_reset" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Reset</span>
+                    </span>
+                 </span>
+           </button>
+           
+           
+         </form></div><br>
+         
+         
+        {% endblock %}
+{% endblock %}

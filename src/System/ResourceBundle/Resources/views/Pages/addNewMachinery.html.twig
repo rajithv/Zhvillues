@@ -1,10 +1,69 @@
-<head>
-<title>Add New Machinery</title>
-</head>
+{% extends "TwigBundle::layout.html.twig" %}
 
-<h1>Purchase new machinery</h1>
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+{% endblock %}
 
-<p>Enter the details of the new machinery below</p>
-<div>
-   {{form(form)}}
-</div> 
+{% block title 'Add New Machinery' %}
+
+{% block body %}
+    {% block content_header %}
+
+    <!-- Logo -->
+    <div id="logo">
+        <h1 id="title">Add New Machinery</h1><br>
+    </div>
+    <div style="clear: both"></div>
+    {% endblock %}
+
+    <div class="block">
+        {% block content %}
+        <form action="{{ path('add_new_machinery') }}" method="POST" id="contact_form">
+            <div>
+                {{ form_label(form.code,'Machine Code') }}
+                {{ form_errors(form.code) }}
+                {{ form_widget(form.code) }}
+            </div><br> 
+            <div>
+                {{ form_label(form.name,'Machine Type') }}
+                {{ form_errors(form.name) }}
+                {{ form_widget(form.name) }}
+            </div><br> 
+            <div>
+                {{ form_label(form.netPresentValue,'Net Present Value') }}
+                {{ form_errors(form.netPresentValue) }}<br>
+                {{ form_widget(form.netPresentValue) }}
+            </div><br>       
+            <div>
+                {{ form_label(form.opCostHour,'Operation Cost per Hour') }} 
+                {{ form_errors(form.opCostHour) }}<br>
+                {{ form_widget(form.opCostHour) }}
+           </div><br>
+           <div>
+                {{ form_label(form.depRate,'Depletion Rate') }} 
+                {{ form_errors(form.depRate) }}<br>
+                {{ form_widget(form.depRate) }}
+           </div><br>
+           
+           <button type="submit" id="form_Submit" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Submit</span>
+                    </span>
+                </span>
+           </button>
+                                
+           <button type="reset" id="form_reset" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Reset</span>
+                    </span>
+                 </span>
+           </button>
+           
+           
+         </form></div><br>
+         
+         
+        {% endblock %}
+{% endblock %}

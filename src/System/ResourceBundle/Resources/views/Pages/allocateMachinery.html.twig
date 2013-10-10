@@ -1,38 +1,49 @@
-<html>
-    <head>
-     
-        <title>Allocate Resources</title>
-    </head>
-    
-    <body>
-        <h1 >Allocate Resources</h1>
-        <div style="border: 1px solid black;background-color: yellow;">
-            <h2>Allocate Machinery</h2>
-            {{ form(Mform) }}
-        
-            <h3>Allocated Machinery</h2>
-            <ul>
-                {% for m in MAllocations %}
-                    <li> {{m}} </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div style="border: 1px solid blue;background-color:pink;">
-            <h2>Allocate HR</h2>
-            {{ form(Hform) }}
-        
-            <h3>Allocated HR</h2>
-            <ul>
-                {% for h in Hallocations %}
-                    <li> {{h}} </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div style="border: 1px solid red;colour:green;">
-            <h2>Allocate Consumables</h2>
-            {{ form(Cform) }}
-        </div>
-    </body>
-</html>
+{% extends "TwigBundle::layout.html.twig" %}
 
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+{% endblock %}
 
+{% block title 'Allocate Machinery' %}
+
+{% block body %}
+    {% block content_header %}
+
+    <!-- Logo -->
+    <div id="logo">
+        <h1 id="title">Allocate Machinary</h1><br>
+    </div>
+    <div style="clear: both"></div>
+    {% endblock %}
+
+    <div class="block">
+        {% block content %}
+        <form action="{{ path('allocate_machinery') }}" method="POST" id="contact_form">
+            <div>
+                {{ form_label(form.code,'Machine Code') }}
+                {{ form_errors(form.code) }}
+                {{ form_widget(form.code) }}
+            </div><br> 
+           
+           <button type="submit" id="form_Submit" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Submit</span>
+                    </span>
+                </span>
+           </button>
+                                
+           <button type="reset" id="form_reset" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Reset</span>
+                    </span>
+                 </span>
+           </button>
+           
+           
+         </form></div><br>
+         
+         
+        {% endblock %}
+{% endblock %}
