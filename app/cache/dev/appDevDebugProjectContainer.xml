@@ -22,6 +22,7 @@
       <parameter key="SystemClientBundle">System\ClientBundle\SystemClientBundle</parameter>
       <parameter key="SystemTrackingBundle">System\TrackingBundle\SystemTrackingBundle</parameter>
       <parameter key="SystemTestBundle">System\TestBundle\SystemTestBundle</parameter>
+      <parameter key="SystemUserBundle">System\UserBundle\SystemUserBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -40,7 +41,8 @@
     <parameter key="mailer_user">null</parameter>
     <parameter key="mailer_password">null</parameter>
     <parameter key="locale">en</parameter>
-    <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
+    <parameter key="secret">a398dc3d2442ba46eee47f142116b992efb184e4</parameter>
+    <parameter key="database_path">null</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
@@ -89,7 +91,7 @@
     <parameter key="debug.stopwatch.class">Symfony\Component\Stopwatch\Stopwatch</parameter>
     <parameter key="debug.container.dump">C:/xampp/htdocs/Zhvillues/app/cache/dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="debug.controller_resolver.class">Symfony\Component\HttpKernel\Controller\TraceableControllerResolver</parameter>
-    <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
+    <parameter key="kernel.secret">a398dc3d2442ba46eee47f142116b992efb184e4</parameter>
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
     <parameter key="kernel.trusted_proxies" type="collection"/>
@@ -737,7 +739,7 @@
       <argument>C:/xampp/htdocs/Zhvillues/app/Resources</argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
-      <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+      <argument>a398dc3d2442ba46eee47f142116b992efb184e4</argument>
     </service>
     <service id="fragment.handler" class="Symfony\Component\HttpKernel\Fragment\FragmentHandler">
       <argument type="collection"/>
@@ -1197,7 +1199,7 @@
     </service>
     <service id="form.csrf_provider" class="Symfony\Component\Form\Extension\Csrf\CsrfProvider\SessionCsrfProvider">
       <argument type="service" id="session"/>
-      <argument>ThisTokenIsNotSoSecretChangeIt</argument>
+      <argument>a398dc3d2442ba46eee47f142116b992efb184e4</argument>
     </service>
     <service id="form.type_extension.csrf" class="Symfony\Component\Form\Extension\Csrf\Type\FormTypeCsrfExtension">
       <tag name="form.type_extension" alias="form"/>
@@ -1598,19 +1600,9 @@
         <service class="Symfony\Bundle\SecurityBundle\Security\FirewallMap" public="false">
           <argument type="service" id="service_container"/>
           <argument type="collection">
-            <argument key="security.firewall.map.context.dev" type="service">
-              <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
-              </service>
-            </argument>
-            <argument key="security.firewall.map.context.login" type="service">
-              <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/demo/secured/login$</argument>
-              </service>
-            </argument>
             <argument key="security.firewall.map.context.secured_area" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/demo/secured/</argument>
+                <argument>^/sec</argument>
               </service>
             </argument>
           </argument>
@@ -1637,7 +1629,7 @@
       <argument type="service" id="router"/>
       <call method="registerListener">
         <argument>secured_area</argument>
-        <argument>_demo_logout</argument>
+        <argument>/sec/logout</argument>
         <argument>logout</argument>
         <argument>_csrf_token</argument>
         <argument>null</argument>
@@ -1671,14 +1663,6 @@
         </argument>
       </call>
     </service>
-    <service id="security.firewall.map.context.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
-      <argument type="collection"/>
-      <argument>null</argument>
-    </service>
-    <service id="security.firewall.map.context.login" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
-      <argument type="collection"/>
-      <argument>null</argument>
-    </service>
     <service id="security.firewall.map.context.secured_area" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
       <argument type="collection">
         <argument type="service">
@@ -1689,7 +1673,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/demo/secured/hello/admin/</argument>
+                      <argument>^/sec/Home</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -1736,19 +1720,14 @@
                     <argument type="service" id="router" on-invalid="null"/>
                   </service>
                 </argument>
-                <argument>_demo</argument>
+                <argument>/</argument>
               </service>
             </argument>
             <argument type="collection">
               <argument key="csrf_parameter">_csrf_token</argument>
               <argument key="intention">logout</argument>
-              <argument key="logout_path">_demo_logout</argument>
+              <argument key="logout_path">/sec/logout</argument>
             </argument>
-            <call method="addHandler">
-              <argument type="service">
-                <service class="Symfony\Component\Security\Http\Logout\SessionLogoutHandler" public="false"/>
-              </argument>
-            </call>
           </service>
         </argument>
         <argument type="service">
@@ -1777,7 +1756,7 @@
                   </service>
                 </argument>
                 <argument type="collection">
-                  <argument key="login_path">_demo_login</argument>
+                  <argument key="login_path">/login</argument>
                   <argument key="always_use_default_target_path">false</argument>
                   <argument key="default_target_path">/</argument>
                   <argument key="target_path_parameter">_target_path</argument>
@@ -1798,7 +1777,7 @@
                   </service>
                 </argument>
                 <argument type="collection">
-                  <argument key="login_path">_demo_login</argument>
+                  <argument key="login_path">/login</argument>
                   <argument key="failure_path">null</argument>
                   <argument key="failure_forward">false</argument>
                   <argument key="failure_path_parameter">_failure_path</argument>
@@ -1807,7 +1786,7 @@
               </service>
             </argument>
             <argument type="collection">
-              <argument key="check_path">_security_check</argument>
+              <argument key="check_path">/sec/login_check</argument>
               <argument key="use_forward">false</argument>
               <argument key="require_previous_session">true</argument>
               <argument key="username_parameter">_username</argument>
@@ -1821,6 +1800,27 @@
           </service>
         </argument>
         <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\BasicAuthenticationListener" public="false">
+            <argument type="service" id="security.context"/>
+            <argument type="service" id="security.authentication.manager"/>
+            <argument>secured_area</argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint" public="false">
+                <argument type="service" id="http_kernel"/>
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                    <argument type="service" id="router" on-invalid="null"/>
+                    <argument type="service" id="router" on-invalid="null"/>
+                  </service>
+                </argument>
+                <argument>/login</argument>
+                <argument>false</argument>
+              </service>
+            </argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+          </service>
+        </argument>
+        <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AccessListener" public="false">
             <tag name="monolog.logger" channel="security"/>
             <argument type="service" id="security.context"/>
@@ -1830,7 +1830,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/demo/secured/hello/admin/</argument>
+                      <argument>^/sec/Home</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -1865,7 +1865,7 @@
                   <argument type="service" id="router" on-invalid="null"/>
                 </service>
               </argument>
-              <argument>_demo_login</argument>
+              <argument>/login</argument>
               <argument>false</argument>
             </service>
           </argument>
@@ -2220,6 +2220,7 @@
               <argument key="SystemResourceBundle">System\ResourceBundle\Entity</argument>
               <argument key="SystemProjectBundle">System\ProjectBundle\Entity</argument>
               <argument key="SystemClientBundle">System\ClientBundle\Entity</argument>
+              <argument key="SystemUserBundle">System\UserBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2270,6 +2271,7 @@
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2285,6 +2287,7 @@
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2300,6 +2303,7 @@
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
                         <argument>mapping</argument>
@@ -2307,6 +2311,22 @@
                     </service>
                   </argument>
                   <argument>System\ClientBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>System\UserBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -2720,6 +2740,10 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\Zhvillues\src\System\TestBundle/Resources/views</argument>
         <argument>SystemTest</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\Zhvillues\src\System\UserBundle/Resources/views</argument>
+        <argument>SystemUser</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\Zhvillues\src\Acme\DemoBundle/Resources/views</argument>

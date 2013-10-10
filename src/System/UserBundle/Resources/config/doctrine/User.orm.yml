@@ -1,0 +1,26 @@
+System\UserBundle\Entity\User:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        username:
+            type: string
+            length: '25'
+            unique: true
+        salt:
+            type: string
+            length: '40'
+        password:
+            type: string
+            length: '60'
+            unique: true
+        email:
+            type: string
+            length: '60'
+        isActive:
+            type: boolean
+    lifecycleCallbacks: {  }

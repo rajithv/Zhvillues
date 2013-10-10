@@ -3,5 +3,5 @@ system_test_homepage:
     defaults: { _controller: SystemTestBundle:Default:index }
 
 _home:
-    pattern: /Home
+    pattern: /sec/Home
     defaults: { _controller: SystemTestBundle:Home:Home }

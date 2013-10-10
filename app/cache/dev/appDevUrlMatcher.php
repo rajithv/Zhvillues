@@ -133,13 +133,36 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/sec/log')) {
+            // logout
+            if ($pathinfo === '/sec/logout') {
+                return array('_route' => 'logout');
+            }
+
+            // login_check
+            if ($pathinfo === '/sec/login_check') {
+                return array('_route' => 'login_check');
+            }
+
+        }
+
+        // system_user_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'system_user_homepage')), array (  '_controller' => 'System\\UserBundle\\Controller\\DefaultController::indexAction',));
+        }
+
+        // login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'System\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+        }
+
         // system_test_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'system_test_homepage')), array (  '_controller' => 'System\\TestBundle\\Controller\\DefaultController::indexAction',));
         }
 
         // _home
-        if ($pathinfo === '/Home') {
+        if ($pathinfo === '/sec/Home') {
             return array (  '_controller' => 'System\\TestBundle\\Controller\\HomeController::HomeAction',  '_route' => '_home',);
         }
 

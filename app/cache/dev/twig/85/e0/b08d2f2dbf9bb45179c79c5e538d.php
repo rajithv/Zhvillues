@@ -42,6 +42,14 @@ class __TwigTemplate_85e0b08d2f2dbf9bb45179c79c5e538d extends Twig_Template
         echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
         echo "
 
+<form action=\"";
+        // line 10
+        echo $this->env->getExtension('routing')->getPath("logout");
+        echo "\" method=\"post\">
+    <button type=\"submit\">logout</button>
+</form>
+
+
 <table>
 
 <tr>
@@ -60,7 +68,7 @@ class __TwigTemplate_85e0b08d2f2dbf9bb45179c79c5e538d extends Twig_Template
 
 <tr>
 <td> <a href=\"";
-        // line 27
+        // line 32
         echo $this->env->getExtension('routing')->getPath("create_project");
         echo "\">create_project<a/> </td>
 <td> Create a new project</td>
@@ -69,7 +77,7 @@ class __TwigTemplate_85e0b08d2f2dbf9bb45179c79c5e538d extends Twig_Template
 
 <tr>
 <td> <a href=\"";
-        // line 33
+        // line 38
         echo $this->env->getExtension('routing')->getPath("create_budget");
         echo "\">create_budget<a/> </td>
 <td> Create a new budget</td>
@@ -90,7 +98,7 @@ class __TwigTemplate_85e0b08d2f2dbf9bb45179c79c5e538d extends Twig_Template
 
 <tr>
 <td> <a href=\"";
-        // line 51
+        // line 56
         echo $this->env->getExtension('routing')->getPath("add");
         echo "\">add<a/> </td>
 <td> Add a new client </td>
@@ -105,7 +113,7 @@ class __TwigTemplate_85e0b08d2f2dbf9bb45179c79c5e538d extends Twig_Template
 
 <tr>
 <td> <a href=\"";
-        // line 63
+        // line 68
         echo $this->env->getExtension('routing')->getPath("add_new_consumable");
         echo "\">add_new_consumable<a/> </td>
 <td> Add new consumable </td>
@@ -114,7 +122,7 @@ class __TwigTemplate_85e0b08d2f2dbf9bb45179c79c5e538d extends Twig_Template
 
 <tr>
 <td> <a href=\"";
-        // line 69
+        // line 74
         echo $this->env->getExtension('routing')->getPath("add_new_machinery");
         echo "\">add_new_machinery<a/> </td>
 <td> Add new machinery </td>
@@ -123,7 +131,7 @@ class __TwigTemplate_85e0b08d2f2dbf9bb45179c79c5e538d extends Twig_Template
 
 <tr>
 <td> <a href=\"";
-        // line 75
+        // line 80
         echo $this->env->getExtension('routing')->getPath("add_new_hr");
         echo "\">add_new_hr<a/> </td>
 <td> Add a new human resource</td>
@@ -138,7 +146,7 @@ class __TwigTemplate_85e0b08d2f2dbf9bb45179c79c5e538d extends Twig_Template
 
 <tr>
 <td> <a href=\"";
-        // line 87
+        // line 92
         echo $this->env->getExtension('routing')->getPath("create_actual_expences");
         echo "\">create_actual_expences<a/> </td>
 <td> Create an expense</td>
@@ -161,6 +169,6 @@ class __TwigTemplate_85e0b08d2f2dbf9bb45179c79c5e538d extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  142 => 87,  127 => 75,  118 => 69,  109 => 63,  94 => 51,  73 => 33,  64 => 27,  42 => 8,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  150 => 92,  135 => 80,  126 => 74,  117 => 68,  102 => 56,  81 => 38,  72 => 32,  47 => 10,  42 => 8,  38 => 6,  35 => 5,  29 => 3,);
     }
 }
