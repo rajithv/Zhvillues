@@ -144,6 +144,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'System\\ReportGenerationBundle\\Controller\\GraphGenerationController::addAction',  '_route' => 'add_new_graph',);
             }
 
+            // add_new_plreport
+            if ($pathinfo === '/addNewPLReport') {
+                return array (  '_controller' => 'System\\ReportGenerationBundle\\Controller\\SummaryProfitandLossReportGenerationController::addAction',  '_route' => 'add_new_plreport',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/sec/log')) {

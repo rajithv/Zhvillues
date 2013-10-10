@@ -16,4 +16,8 @@ add_new_hrreport:
     
 add_new_graph:
     pattern: /addNewGraph
-    defaults: { _controller: SystemReportGenerationBundle:GraphGeneration:add}
+    defaults: { _controller: SystemReportGenerationBundle:GraphGeneration:add }
+    
+add_new_plreport:
+  pattern: /addNewPLReport
+  defaults: { _controller: SystemReportGenerationBundle:SummaryProfitandLossReportGeneration:add}
