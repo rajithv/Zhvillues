@@ -8,15 +8,25 @@ Hello Project Manager, You can add Resources from the links
 
 <table>
 <tr>
-<td> <a href="{{ path('add_new_consumable') }}">Add a New Consumable<a/> </td>
+<td> 
+       <form action="{{ path('add_new_consumable') }}" method="post">
+       <button type="submit">Add a New Consumable</button>
+       </form></td>
+
 </tr>
 
 <tr>
-<td> <a href="{{ path('add_new_machinery') }}">Add a New Machinary<a/> </td>
+<td> 
+        <form action="{{ path('add_new_machinery') }}" method="post">
+        <button type="submit">Add a New Machinary</button>
+        </form></td>
 </tr>
 
 <tr>
-<td> <a href="{{ path('add_new_hr') }}">Add a New HR<a/> </td>
+<td> 
+        <form action="{{ path('add_new_hr') }}" method="post">
+        <button type="submit">Add a New HR</button>
+        </form></td>
 </tr>
 
 </table>

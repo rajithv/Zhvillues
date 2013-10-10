@@ -43,25 +43,36 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
 <table>
 
 <tr>
-<td> <a href=\"";
-        // line 12
+<td> 
+    
+    <form action=\"";
+        // line 14
         echo $this->env->getExtension('routing')->getPath("add");
-        echo "\">Add a New Client<a/> </td>
+        echo "\" method=\"post\">
+    <button type=\"submit\">Add a New Client</button>
+    </form>
+    
 </tr>
 
 
 <tr>
-<td> <a href=\"";
-        // line 17
+<td> 
+        <form action=\"";
+        // line 23
         echo $this->env->getExtension('routing')->getPath("create_project");
-        echo "\">Add a New Project<a/> </td>
+        echo "\" method=\"post\">
+        <button type=\"submit\">Add a New Project</button>
+        </form></td>
 </tr>
 
 <tr>
-<td> <a href=\"";
-        // line 21
+<td>
+        <form action=\"";
+        // line 30
         echo $this->env->getExtension('routing')->getPath("createResource");
-        echo "\">Add a New Resource<a/> </td>
+        echo "\" method=\"post\">
+        <button type=\"submit\">Add a New Resource</button>
+        </form></td> </td>
 </tr>
 
 
@@ -81,6 +92,6 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  63 => 21,  56 => 17,  48 => 12,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  72 => 30,  62 => 23,  50 => 14,  38 => 6,  35 => 5,  29 => 3,);
     }
 }

@@ -9,16 +9,27 @@ Hello Project Manager {{ name }}!
 <table>
 
 <tr>
-<td> <a href="{{ path('add') }}">Add a New Client<a/> </td>
+<td> 
+    
+    <form action="{{ path('add') }}" method="post">
+    <button type="submit">Add a New Client</button>
+    </form>
+    
 </tr>
 
 
 <tr>
-<td> <a href="{{ path('create_project') }}">Add a New Project<a/> </td>
+<td> 
+        <form action="{{ path('create_project') }}" method="post">
+        <button type="submit">Add a New Project</button>
+        </form></td>
 </tr>
 
 <tr>
-<td> <a href="{{ path('createResource') }}">Add a New Resource<a/> </td>
+<td>
+        <form action="{{ path('createResource') }}" method="post">
+        <button type="submit">Add a New Resource</button>
+        </form></td> </td>
 </tr>
 
 
