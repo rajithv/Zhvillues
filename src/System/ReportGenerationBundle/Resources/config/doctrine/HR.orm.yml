@@ -1,0 +1,27 @@
+System\ResourceBundle\Entity\HR:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        code:
+            type: string
+            length: 255
+        name:
+            type: string
+            length: 255
+        department:
+            type: string
+            length: 255
+        idNo:
+            type: string
+            length: 255
+        rateHour:
+            type: float
+        project:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
