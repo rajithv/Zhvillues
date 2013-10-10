@@ -9,16 +9,16 @@ class ProjectCreationController extends Controller {
     public function createProjectAction() {
 
         $form = $this->createFormBuilder()
-                ->add('Project_Code', 'text')
-                ->add('Client', 'text')
-                ->add('Manager', 'text')
-                ->add('Budget', 'text')
-                ->add('List_of_Consumable','text')
-                ->add('List_of_Machinery','text')
-                ->add('List_of_Human_Resources','text')
-                ->add('List_of_Actual_Expences','text')
-                ->add('Date_of_Completion','date')
-                ->add('Status','textarea')
+                ->add('projectID', 'text')
+                ->add('client', 'text')
+                ->add('manager', 'text')
+                ->add('budget', 'text')
+                ->add('listOfConsumable','text')
+                ->add('listOfMachinery','text')
+                ->add('listOfHR','text')
+                ->add('listOfExpences','text')
+                ->add('dateOfCompletion','date')
+                ->add('status','textarea')
                 ->add('create', 'submit')
                 ->getForm();
 
