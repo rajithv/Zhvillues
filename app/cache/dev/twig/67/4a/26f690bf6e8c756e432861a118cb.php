@@ -50,15 +50,26 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
         echo $this->env->getExtension('routing')->getPath("add");
         echo "\" method=\"post\">
     <button type=\"submit\">Add a New Client</button>
-    </form>
+    </form></td>
     
 </tr>
 
+<tr>
+<td> 
+    
+    <form action=\"";
+        // line 23
+        echo $this->env->getExtension('routing')->getPath("create_budget");
+        echo "\" method=\"post\">
+    <button type=\"submit\">Add a New Budget</button>
+    </form></td>
+    
+</tr>
 
 <tr>
 <td> 
         <form action=\"";
-        // line 23
+        // line 31
         echo $this->env->getExtension('routing')->getPath("create_project");
         echo "\" method=\"post\">
         <button type=\"submit\">Add a New Project</button>
@@ -68,7 +79,7 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
 <tr>
 <td>
         <form action=\"";
-        // line 30
+        // line 38
         echo $this->env->getExtension('routing')->getPath("createResource");
         echo "\" method=\"post\">
         <button type=\"submit\">Add a New Resource</button>
@@ -92,6 +103,6 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  72 => 30,  62 => 23,  50 => 14,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  83 => 38,  73 => 31,  62 => 23,  50 => 14,  38 => 6,  35 => 5,  29 => 3,);
     }
 }
