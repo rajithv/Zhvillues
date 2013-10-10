@@ -552,7 +552,7 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_321eba11defaffe40ba5566e347413cd');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ResourceBundle\\Resources\\config\\doctrine' => 'System\\ResourceBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ProjectBundle\\Resources\\config\\doctrine' => 'System\\ProjectBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle\\Resources\\config\\doctrine' => 'System\\ClientBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\TrackingBundle\\Resources\\config\\doctrine' => 'System\\TrackingBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\UserBundle\\Resources\\config\\doctrine' => 'System\\UserBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\NavigationBundle\\Resources\\config\\doctrine' => 'System\\NavigationBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ReportGenerationBundle\\Resources\\config\\doctrine' => 'System\\ReportGenerationBundle\\Entity'));
+        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ResourceBundle\\Resources\\config\\doctrine' => 'System\\ResourceBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ProjectBundle\\Resources\\config\\doctrine' => 'System\\ProjectBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle\\Resources\\config\\doctrine' => 'System\\ClientBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\TrackingBundle\\Resources\\config\\doctrine' => 'System\\TrackingBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\UserBundle\\Resources\\config\\doctrine' => 'System\\UserBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
         $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
@@ -561,11 +561,9 @@ class appDevDebugProjectContainer extends Container
         $e->addDriver($d, 'System\\ClientBundle\\Entity');
         $e->addDriver($d, 'System\\TrackingBundle\\Entity');
         $e->addDriver($d, 'System\\UserBundle\\Entity');
-        $e->addDriver($d, 'System\\NavigationBundle\\Entity');
-        $e->addDriver($d, 'System\\ReportGenerationBundle\\Entity');
 
         $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('SystemResourceBundle' => 'System\\ResourceBundle\\Entity', 'SystemProjectBundle' => 'System\\ProjectBundle\\Entity', 'SystemClientBundle' => 'System\\ClientBundle\\Entity', 'SystemTrackingBundle' => 'System\\TrackingBundle\\Entity', 'SystemUserBundle' => 'System\\UserBundle\\Entity', 'SystemNavigationBundle' => 'System\\NavigationBundle\\Entity', 'SystemReportGenerationBundle' => 'System\\ReportGenerationBundle\\Entity'));
+        $f->setEntityNamespaces(array('SystemResourceBundle' => 'System\\ResourceBundle\\Entity', 'SystemProjectBundle' => 'System\\ProjectBundle\\Entity', 'SystemClientBundle' => 'System\\ClientBundle\\Entity', 'SystemTrackingBundle' => 'System\\TrackingBundle\\Entity', 'SystemUserBundle' => 'System\\UserBundle\\Entity'));
         $f->setMetadataCacheImpl($a);
         $f->setQueryCacheImpl($b);
         $f->setResultCacheImpl($c);
@@ -3707,7 +3705,7 @@ class appDevDebugProjectContainer extends Container
             'assetic.variables' => array(
 
             ),
-            'assetic.java.bin' => 'C:\\Program Files\\Java\\jdk1.7.0_40\\bin\\java.EXE',
+            'assetic.java.bin' => 'C:\\Users\\hp\\algs4\\java\\bin\\java.EXE',
             'assetic.node.bin' => '/usr/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
