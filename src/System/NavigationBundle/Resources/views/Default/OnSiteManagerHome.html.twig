@@ -1,1 +1,7 @@
-Hello On Site Manager {{ name }}!
+<h1>Hello On Site Manager {{ name }}!</h1>
+<h2>Report expences</h2>
+        <form action="{{ path('create_actual_expences') }}" method="post">
+        <button type="submit">Report todays expences</button>
+        </form>
+<h2>Check reports</h2>
+        <button type="submit">Get reports about my project</button>

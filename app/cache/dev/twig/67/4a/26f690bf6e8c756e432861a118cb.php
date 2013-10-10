@@ -35,37 +35,66 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
     public function block_body($context, array $blocks = array())
     {
         // line 6
-        echo "Hello Project Manager ";
+        echo "<h1>Hello Project Manager ";
         echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
-        echo "!
+        echo "!</h1>
 <div> </div>
-
+<h2>Adding new items</h2>
 <table>
 
 <tr>
-<td> <a href=\"";
-        // line 12
+<td> 
+    
+    <form action=\"";
+        // line 14
         echo $this->env->getExtension('routing')->getPath("add");
-        echo "\">Add a New Client<a/> </td>
+        echo "\" method=\"post\">
+    <button type=\"submit\">Add a New Client</button>
+    </form></td>
+    
 </tr>
 
+<tr>
+<td> 
+    
+    <form action=\"";
+        // line 23
+        echo $this->env->getExtension('routing')->getPath("create_budget");
+        echo "\" method=\"post\">
+    <button type=\"submit\">Add a New Budget</button>
+    </form></td>
+    
+</tr>
 
 <tr>
-<td> <a href=\"";
-        // line 17
+<td> 
+        <form action=\"";
+        // line 31
         echo $this->env->getExtension('routing')->getPath("create_project");
-        echo "\">Add a New Project<a/> </td>
+        echo "\" method=\"post\">
+        <button type=\"submit\">Add a New Project</button>
+        </form></td>
 </tr>
 
 <tr>
-<td> <a href=\"";
-        // line 21
+<td>
+        <form action=\"";
+        // line 38
         echo $this->env->getExtension('routing')->getPath("createResource");
-        echo "\">Add a New Resource<a/> </td>
+        echo "\" method=\"post\">
+        <button type=\"submit\">Add a New Resource</button>
+        </form></td> </td>
 </tr>
 
 
-</table?
+</table>
+
+<h2>Checking excisting projects</h2>
+
+<td>
+       
+        <button type=\"submit\">Select a project and get reports</button>
+
 ";
     }
 
@@ -81,6 +110,6 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  63 => 21,  56 => 17,  48 => 12,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  83 => 38,  73 => 31,  62 => 23,  50 => 14,  38 => 6,  35 => 5,  29 => 3,);
     }
 }

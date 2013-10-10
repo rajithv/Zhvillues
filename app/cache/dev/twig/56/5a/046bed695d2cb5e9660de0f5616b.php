@@ -35,29 +35,39 @@ class __TwigTemplate_565a046bed695d2cb5e9660de0f5616b extends Twig_Template
     public function block_body($context, array $blocks = array())
     {
         // line 6
-        echo "Hello Project Manager, You can add Resources!
+        echo "Hello Project Manager, You can add Resources from the links
 <div> </div>
 
 <table>
 <tr>
-<td> <a href=\"";
-        // line 11
+<td> 
+       <form action=\"";
+        // line 12
         echo $this->env->getExtension('routing')->getPath("add_new_consumable");
-        echo "\">Add a New Consumable<a/> </td>
+        echo "\" method=\"post\">
+       <button type=\"submit\">Add a New Consumable</button>
+       </form></td>
+
 </tr>
 
 <tr>
-<td> <a href=\"";
-        // line 15
+<td> 
+        <form action=\"";
+        // line 20
         echo $this->env->getExtension('routing')->getPath("add_new_machinery");
-        echo "\">Add a New Machinary<a/> </td>
+        echo "\" method=\"post\">
+        <button type=\"submit\">Add a New Machinary</button>
+        </form></td>
 </tr>
 
 <tr>
-<td> <a href=\"";
-        // line 19
+<td> 
+        <form action=\"";
+        // line 27
         echo $this->env->getExtension('routing')->getPath("add_new_hr");
-        echo "\">Add a New HR<a/> </td>
+        echo "\" method=\"post\">
+        <button type=\"submit\">Add a New HR</button>
+        </form></td>
 </tr>
 
 </table>
@@ -76,6 +86,6 @@ class __TwigTemplate_565a046bed695d2cb5e9660de0f5616b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  59 => 19,  52 => 15,  45 => 11,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  67 => 27,  57 => 20,  46 => 12,  38 => 6,  35 => 5,  29 => 3,);
     }
 }
