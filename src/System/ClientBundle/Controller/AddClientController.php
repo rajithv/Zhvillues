@@ -28,6 +28,20 @@ class AddClientController extends Controller
         
         $form->handleRequest($request);
         
+        if (isset($_POST['form_create'])) { 
+            $client=$form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($client);
+            $em->flush();
+            $response = array(
+              'message' => "New client added successfully.",
+            );
+            
+            return $this->redirect($this->generateUrl('add', $response)); 
+            
+        } else if (isset($_POST['btnB'])) { 
+            return $this->render('SystemClientBundle:Pages:addClient.html.twig', array('form' => $form->createView(), 'message' => $message));
+        }
         
         
         if($form->isValid()){

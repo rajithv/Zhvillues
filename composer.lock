@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "fb10a9c56c83c0a6f1d8ca348d5a7c0e",
+    "hash": "9fbce8d8f6cf1409f06eafa2899efb31",
     "packages": [
         {
             "name": "doctrine/common",
@@ -320,7 +320,7 @@
                     "FOS\\UserBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
