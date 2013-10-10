@@ -1,1 +1,0 @@
-<?php return unserialize('a:1:{i:0;O:45:"Symfony\\Component\\Validator\\Constraints\\Range":6:{s:10:"minMessage";s:41:"This value should be {{ limit }} or more.";s:10:"maxMessage";s:41:"This value should be {{ limit }} or less.";s:14:"invalidMessage";s:36:"This value should be a valid number.";s:3:"min";s:1:"0";s:3:"max";N;s:6:"groups";a:1:{i:0;s:7:"Default";}}}');

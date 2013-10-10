@@ -234,20 +234,28 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'system_resource_homepage')), array (  '_controller' => 'System\\ResourceBundle\\Controller\\DefaultController::indexAction',));
         }
 
-        if (0 === strpos($pathinfo, '/addNew')) {
-            // add_new_consumable
-            if ($pathinfo === '/addNewConsumable') {
-                return array (  '_controller' => 'System\\ResourceBundle\\Controller\\NewConsumableController::addAction',  '_route' => 'add_new_consumable',);
+        if (0 === strpos($pathinfo, '/a')) {
+            if (0 === strpos($pathinfo, '/addNew')) {
+                // add_new_consumable
+                if ($pathinfo === '/addNewConsumable') {
+                    return array (  '_controller' => 'System\\ResourceBundle\\Controller\\NewConsumableController::addAction',  '_route' => 'add_new_consumable',);
+                }
+
+                // add_new_machinery
+                if ($pathinfo === '/addNewMachinery') {
+                    return array (  '_controller' => 'System\\ResourceBundle\\Controller\\NewMachineryController::addAction',  '_route' => 'add_new_machinery',);
+                }
+
+                // add_new_hr
+                if ($pathinfo === '/addNewHR') {
+                    return array (  '_controller' => 'System\\ResourceBundle\\Controller\\NewHRController::addAction',  '_route' => 'add_new_hr',);
+                }
+
             }
 
-            // add_new_machinery
-            if ($pathinfo === '/addNewMachinery') {
-                return array (  '_controller' => 'System\\ResourceBundle\\Controller\\NewMachineryController::addAction',  '_route' => 'add_new_machinery',);
-            }
-
-            // add_new_hr
-            if ($pathinfo === '/addNewHR') {
-                return array (  '_controller' => 'System\\ResourceBundle\\Controller\\NewHRController::addAction',  '_route' => 'add_new_hr',);
+            // allocate_machinery
+            if (0 === strpos($pathinfo, '/allocateMachinery') && preg_match('#^/allocateMachinery/(?P<project>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'allocate_machinery')), array (  '_controller' => 'System\\ResourceBundle\\Controller\\AllocateMachineryController::showAction',));
             }
 
         }
