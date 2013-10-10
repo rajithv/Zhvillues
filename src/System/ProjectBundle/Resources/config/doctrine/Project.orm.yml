@@ -1,0 +1,39 @@
+System\ProjectBundle\Entity\Project:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        projectID:
+            type: string
+            length: '10'
+        client:
+            type: string
+            length: '25'
+        manager:
+            type: string
+            length: '10'
+        budget:
+            type: string
+            length: '10'
+        listOfConsumable:
+            type: string
+            length: 255
+        listOfMachinery:
+            type: string
+            length: 255
+        listOfHR:
+            type: string
+            length: 255
+        listOfExpences:
+            type: string
+            length: 255
+        dateOfCompletion:
+            type: date
+        status:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

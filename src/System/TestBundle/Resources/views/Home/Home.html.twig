@@ -1,17 +1,22 @@
-{% extends "::base.html.twig" %}
 
-{% block title %}SystemTestBundle:Home:Home{% endblock %}
+{% extends "TwigBundle::layout.html.twig" %}
+
+{% block title %}Soil Tech:Home{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Home:Home page</h1>
+<h1>Welcome to the Soil </h1>
 
-{{name}}
+
 
 <form action="{{ path('logout') }}" method="post">
     <button type="submit">logout</button>
 </form>
-
-
+<div class="block">
+{%block content%}
 <table>
 
 <tr>
@@ -94,5 +99,6 @@
 <td> created </td>
 </tr>
 </table>
-
+{%endblock%}
+</div>
 {% endblock %}

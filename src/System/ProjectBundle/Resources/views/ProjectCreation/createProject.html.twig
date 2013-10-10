@@ -1,9 +1,94 @@
-<html>
-    <head>
-        <title>Add New Project</title>
-    </head>
-    
-    <body>
-       {{ form(form) }}
-    </body>
-</html>
+{% extends "TwigBundle::layout.html.twig" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+{% endblock %}
+
+{% block title 'Create Project' %}
+
+{% block body %}
+    {% block content_header %}
+
+    <!-- Logo -->
+    <div id="logo">
+        <h1 id="title"> Create Project</h1><br>
+    </div>
+    <div style="clear: both"></div>
+    {% endblock %}
+
+    <div class="block">
+        {% block content %}
+        <form action="{{ path('create_project') }}" method="POST" id="contact_form">
+            <div>
+                {{ form_label(form.projectID,'Project Code') }}
+                {{ form_errors(form.projectID) }}
+                {{ form_widget(form.projectID) }}
+            </div><br> 
+            <div>
+                {{ form_label(form.client,'Client') }}
+                {{ form_errors(form.client) }}
+                {{ form_widget(form.client) }}
+            </div><br> 
+            <div>
+                {{ form_label(form.manager,'Manager') }}
+                {{ form_errors(form.manager) }}
+                {{ form_widget(form.manager) }}
+            </div><br>       
+            <div>
+                {{ form_label(form.budget,'Budget') }} 
+                {{ form_errors(form.budget) }}
+                {{ form_widget(form.budget) }}
+           </div><br>
+           <div>
+                {{ form_label(form.listOfConsumable,'List Of Consumable') }} 
+                {{ form_errors(form.listOfConsumable) }}<br>
+                {{ form_widget(form.listOfConsumable) }}
+           </div><br>
+           <div>
+                {{ form_label(form.listOfMachinery,'List Of Machinery') }}
+                {{ form_errors(form.listOfMachinery) }}<br>
+                {{ form_widget(form.listOfMachinery) }}
+           </div><br>
+           <div>
+                {{ form_label(form.listOfHR,'List Of HR') }}
+                {{ form_errors(form.listOfHR) }}
+                {{ form_widget(form.listOfHR) }}
+           </div><br>
+           <div>
+                {{ form_label(form.listOfExpences,'List Of Expences') }}
+                {{ form_errors(form.listOfExpences) }}
+                {{ form_widget(form.listOfExpences) }}
+           </div><br>
+           <div>
+                {{ form_label(form.dateOfCompletion,'Date Of Completion') }}
+                {{ form_errors(form.dateOfCompletion) }}<br>
+                {{ form_widget(form.dateOfCompletion) }}
+           </div><br>
+           <div>
+                {{ form_label(form.status,'Status') }}
+                {{ form_errors(form.status) }}
+                {{ form_widget(form.status) }}
+           </div><br>
+           
+           <button type="submit" id="form_Submit" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Submit</span>
+                    </span>
+                </span>
+           </button>
+                                
+           <button type="reset" id="form_reset" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Reset</span>
+                    </span>
+                 </span>
+           </button>
+           
+           
+         </form></div><br>
+         
+         
+        {% endblock %}
+{% endblock %}

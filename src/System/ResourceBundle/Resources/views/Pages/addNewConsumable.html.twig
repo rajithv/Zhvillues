@@ -1,8 +1,59 @@
-<h1>Purchace a new consumable</h1>
+{% extends "TwigBundle::layout.html.twig" %}
 
-<p>Enter the details of the new consumables below</p>
-<div>
-    {{message}}
-    {{form(form)}}
-    
-</div> 
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+{% endblock %}
+
+{% block title 'Add New Consumable' %}
+
+{% block body %}
+    {% block content_header %}
+
+    <!-- Logo -->
+    <div id="logo">
+        <h1 id="title"> Add New Consumable</h1><br>
+    </div>
+    <div style="clear: both"></div>
+    {% endblock %}
+
+    <div class="block">
+        {% block content %}
+        <form action="{{ path('add_new_consumable') }}" method="POST" id="contact_form">
+            <div>
+                {{ form_label(form.name,'Name') }}
+                {{ form_errors(form.name) }}
+                {{ form_widget(form.name) }}
+            </div><br> 
+            <div>
+                {{ form_label(form.quantity,'Quantity') }}
+                {{ form_errors(form.quantity) }}
+                {{ form_widget(form.quantity) }}
+            </div><br> 
+            <div>
+                {{ form_label(form.unitValue,'Unit Value') }}
+                {{ form_errors(form.unitValue) }}
+                {{ form_widget(form.unitValue) }}
+            </div><br>       
+            
+           <button type="submit" id="form_Submit" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Submit</span>
+                    </span>
+                </span>
+           </button>
+                                
+           <button type="reset" id="form_reset" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Reset</span>
+                    </span>
+                 </span>
+           </button>
+           
+           
+         </form></div><br>
+         
+         
+        {% endblock %}
+{% endblock %}
