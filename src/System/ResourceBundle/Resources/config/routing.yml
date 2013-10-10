@@ -13,3 +13,7 @@ add_new_machinery:
 add_new_hr:
     pattern: /addNewHR
     defaults: { _controller: SystemResourceBundle:NewHR:add }
+
+allocate_machinery:
+  pattern: /allocateMachinery/{project}
+  defaults: {_controller: SystemResourceBundle:AllocateMachinery:show}
