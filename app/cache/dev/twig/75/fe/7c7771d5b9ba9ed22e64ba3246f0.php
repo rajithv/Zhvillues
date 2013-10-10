@@ -17,20 +17,24 @@ class __TwigTemplate_75fe7c7771d5b9ba9ed22e64ba3246f0 extends Twig_Template
     {
         // line 1
         echo "!!!REPORT!!!
-HR Code          ";
+Total HR Cost    ";
         // line 2
+        echo twig_escape_filter($this->env, (isset($context["totalhrcost"]) ? $context["totalhrcost"] : $this->getContext($context, "totalhrcost")), "html", null, true);
+        echo "
+HR Code          ";
+        // line 3
         echo twig_escape_filter($this->env, (isset($context["code"]) ? $context["code"] : $this->getContext($context, "code")), "html", null, true);
         echo "
 Name             ";
-        // line 3
+        // line 4
         echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
         echo "
 Department       ";
-        // line 4
+        // line 5
         echo twig_escape_filter($this->env, (isset($context["department"]) ? $context["department"] : $this->getContext($context, "department")), "html", null, true);
         echo "
 Current Project  ";
-        // line 5
+        // line 6
         echo twig_escape_filter($this->env, (isset($context["project"]) ? $context["project"] : $this->getContext($context, "project")), "html", null, true);
     }
 
@@ -46,6 +50,6 @@ Current Project  ";
 
     public function getDebugInfo()
     {
-        return array (  34 => 5,  30 => 4,  26 => 3,  22 => 2,  19 => 1,);
+        return array (  38 => 6,  34 => 5,  30 => 4,  26 => 3,  22 => 2,  19 => 1,);
     }
 }
