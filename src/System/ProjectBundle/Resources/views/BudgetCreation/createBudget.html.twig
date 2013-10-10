@@ -1,9 +1,75 @@
-<html>
-    <head>
-        <title>Add New Budget</title>
-    </head>
-    
-    <body>
-       {{ form(form) }}
-    </body>
-</html>
+{% extends "TwigBundle::layout.html.twig" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+{% endblock %}
+
+{% block title 'Create Budget' %}
+
+{% block body %}
+    {% block content_header %}
+
+    <!-- Logo -->
+    <div id="logo">
+        <h1 id="title"> Create Budget</h1><br>
+    </div> 
+    <div style="clear: both"></div>
+    {% endblock %}
+
+    <div class="block">
+        {% block content %}
+        <form action="{{ path('create_budget') }}" method="POST" id="contact_form">
+            <div>
+                {{ form_label(form.projectID,'Project Code') }}
+                {{ form_errors(form.projectID) }}
+                {{ form_widget(form.projectID) }}
+            </div><br>           
+            <div>
+                {{ form_label(form.machineryCost,'Machinery Cost') }}
+                {{ form_errors(form.machineryCost) }}
+                {{ form_widget(form.machineryCost) }}
+            </div><br>       
+            <div>
+                {{ form_label(form.consumableCost,'Consumable Cost') }} 
+                {{ form_errors(form.consumableCost) }}
+                {{ form_widget(form.consumableCost) }}
+           </div><br>
+           <div>
+                {{ form_label(form.hrCost,'HR Cost') }} 
+                {{ form_errors(form.hrCost) }}
+                {{ form_widget(form.hrCost) }}
+           </div><br>
+           <div>
+                {{ form_label(form.timeEstimate,'Time Estimate(in months)') }}
+                {{ form_errors(form.timeEstimate) }}<br>
+                {{ form_widget(form.timeEstimate) }}
+           </div><br>
+           <div>
+                {{ form_label(form.variationPercentage,'Variation Percentage') }}
+                {{ form_errors(form.variationPercentage) }}
+                {{ form_widget(form.variationPercentage) }}
+           </div><br>
+           
+           
+           <button type="submit" id="form_Submit" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Submit</span>
+                    </span>
+                </span>
+           </button>
+                                
+           <button type="reset" id="form_reset" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Reset</span>
+                    </span>
+                 </span>
+           </button>
+           
+           
+         </form></div><br>
+         
+         
+        {% endblock %}
+{% endblock %}
