@@ -12,4 +12,8 @@ add_new_machinery:
 
 add_new_hrreport:
     pattern: /addNewHRReport
-    defaults: { _controller: SystemReportGenerationBundle:HRReportGeneration:add }
+    defaults: { _controller: SystemReportGenerationBundle:HRReportGeneration:add } 
+    
+add_new_graph:
+    pattern: /addNewGraph
+    defaults: { _controller: SystemReportGenerationBundle:GraphGeneration:add}
