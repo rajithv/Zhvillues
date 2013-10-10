@@ -1,0 +1,23 @@
+System\ProjectBundle\Entity\Budget:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        projectID:
+            type: string
+            length: '10'
+        machineryCost:
+            type: float
+        consumableCost:
+            type: float
+        hrCost:
+            type: float
+        timeEstimate:
+            type: integer
+        variationPercentage:
+            type: float
+    lifecycleCallbacks: {  }

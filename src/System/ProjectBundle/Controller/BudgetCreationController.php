@@ -3,20 +3,39 @@
 namespace System\ProjectBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use System\ProjectBundle\Entity\Budget;
+use Symfony\Component\HttpFoundation\Request;
 
-class BudgetCreationController extends Controller
-{
-    public function createBudgetAction()
-    {
-        $form = $this->createFormBuilder()
-                ->add('Machinery_Cost', 'text')
-                ->add('Consumable_Cost', 'text')
-                ->add('Human_Resource_Cost', 'text')
-                ->add('Time_Estimate_in_Months', 'integer')
-                ->add('Variation_Precentage','percent')
+class BudgetCreationController extends Controller {
+
+    public function createBudgetAction(Request $request) {
+        $message = $request->get('message', null);
+
+        $budget = new Budget();
+        $form = $this->createFormBuilder($budget)
+                ->add('projectID', 'text')
+                ->add('machineryCost', 'text')
+                ->add('consumableCost', 'text')
+                ->add('hrCost', 'text')
+                ->add('timeEstimate', 'integer')
+                ->add('variationPercentage', 'percent')
+                ->add('create', 'submit')
+                ->add('clear', 'reset')
                 ->getForm();
+        $form->handleRequest($request);
 
-        return $this->render('SystemProjectBundle:BudgetCreation:createBudget.html.twig', array('form' => $form->createView(),));
+        if ($form->isValid()) {
+            $budget = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($budget);
+            $em->flush();
+
+            $response = array('message' => "New Budget Created Successfully");
+
+            return $this->redirect($this->generateUrl('create_budget', $response));
+        }
+
+        return $this->render('SystemProjectBundle:BudgetCreation:createBudget.html.twig', array('form' => $form->createView(), 'message' => $message));
     }
 
 }

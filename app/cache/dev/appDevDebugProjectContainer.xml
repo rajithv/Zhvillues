@@ -44,7 +44,6 @@
     <parameter key="mailer_password">null</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="secret">a398dc3d2442ba46eee47f142116b992efb184e4</parameter>
-    <parameter key="database_path">null</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
@@ -405,7 +404,7 @@
     <parameter key="assetic.read_from">C:/xampp/htdocs/Zhvillues/app/../web</parameter>
     <parameter key="assetic.write_to">C:/xampp/htdocs/Zhvillues/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
-    <parameter key="assetic.java.bin">C:\Users\hp\algs4\java\bin\java.EXE</parameter>
+    <parameter key="assetic.java.bin">C:\Program Files\Java\jdk1.7.0_40\bin\java.EXE</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
