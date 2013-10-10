@@ -552,19 +552,20 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_321eba11defaffe40ba5566e347413cd');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ResourceBundle\\Resources\\config\\doctrine' => 'System\\ResourceBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ProjectBundle\\Resources\\config\\doctrine' => 'System\\ProjectBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle\\Resources\\config\\doctrine' => 'System\\ClientBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\UserBundle\\Resources\\config\\doctrine' => 'System\\UserBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\NavigationBundle\\Resources\\config\\doctrine' => 'System\\NavigationBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ReportGenerationBundle\\Resources\\config\\doctrine' => 'System\\ReportGenerationBundle\\Entity'));
+        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array('C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ResourceBundle\\Resources\\config\\doctrine' => 'System\\ResourceBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ProjectBundle\\Resources\\config\\doctrine' => 'System\\ProjectBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ClientBundle\\Resources\\config\\doctrine' => 'System\\ClientBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\TrackingBundle\\Resources\\config\\doctrine' => 'System\\TrackingBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\UserBundle\\Resources\\config\\doctrine' => 'System\\UserBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\NavigationBundle\\Resources\\config\\doctrine' => 'System\\NavigationBundle\\Entity', 'C:\\xampp\\htdocs\\Zhvillues\\src\\System\\ReportGenerationBundle\\Resources\\config\\doctrine' => 'System\\ReportGenerationBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
         $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
         $e->addDriver($d, 'System\\ResourceBundle\\Entity');
         $e->addDriver($d, 'System\\ProjectBundle\\Entity');
         $e->addDriver($d, 'System\\ClientBundle\\Entity');
+        $e->addDriver($d, 'System\\TrackingBundle\\Entity');
         $e->addDriver($d, 'System\\UserBundle\\Entity');
         $e->addDriver($d, 'System\\NavigationBundle\\Entity');
         $e->addDriver($d, 'System\\ReportGenerationBundle\\Entity');
 
         $f = new \Doctrine\ORM\Configuration();
-        $f->setEntityNamespaces(array('SystemResourceBundle' => 'System\\ResourceBundle\\Entity', 'SystemProjectBundle' => 'System\\ProjectBundle\\Entity', 'SystemClientBundle' => 'System\\ClientBundle\\Entity', 'SystemUserBundle' => 'System\\UserBundle\\Entity', 'SystemNavigationBundle' => 'System\\NavigationBundle\\Entity', 'SystemReportGenerationBundle' => 'System\\ReportGenerationBundle\\Entity'));
+        $f->setEntityNamespaces(array('SystemResourceBundle' => 'System\\ResourceBundle\\Entity', 'SystemProjectBundle' => 'System\\ProjectBundle\\Entity', 'SystemClientBundle' => 'System\\ClientBundle\\Entity', 'SystemTrackingBundle' => 'System\\TrackingBundle\\Entity', 'SystemUserBundle' => 'System\\UserBundle\\Entity', 'SystemNavigationBundle' => 'System\\NavigationBundle\\Entity', 'SystemReportGenerationBundle' => 'System\\ReportGenerationBundle\\Entity'));
         $f->setMetadataCacheImpl($a);
         $f->setQueryCacheImpl($b);
         $f->setResultCacheImpl($c);

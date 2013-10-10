@@ -1,0 +1,21 @@
+System\TrackingBundle\Entity\Expence:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        projectID:
+            type: string
+            length: '10'
+        machineryCost:
+            type: float
+        consumableCost:
+            type: float
+        hrCost:
+            type: float
+        endingDate:
+            type: date
+    lifecycleCallbacks: {  }

@@ -2220,6 +2220,7 @@
               <argument key="SystemResourceBundle">System\ResourceBundle\Entity</argument>
               <argument key="SystemProjectBundle">System\ProjectBundle\Entity</argument>
               <argument key="SystemClientBundle">System\ClientBundle\Entity</argument>
+              <argument key="SystemTrackingBundle">System\TrackingBundle\Entity</argument>
               <argument key="SystemUserBundle">System\UserBundle\Entity</argument>
               <argument key="SystemNavigationBundle">System\NavigationBundle\Entity</argument>
               <argument key="SystemReportGenerationBundle">System\ReportGenerationBundle\Entity</argument>
@@ -2262,6 +2263,7 @@
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\TrackingBundle\Resources\config\doctrine">System\TrackingBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\NavigationBundle\Resources\config\doctrine">System\NavigationBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ReportGenerationBundle\Resources\config\doctrine">System\ReportGenerationBundle\Entity</argument>
@@ -2280,6 +2282,7 @@
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\TrackingBundle\Resources\config\doctrine">System\TrackingBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\NavigationBundle\Resources\config\doctrine">System\NavigationBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ReportGenerationBundle\Resources\config\doctrine">System\ReportGenerationBundle\Entity</argument>
@@ -2298,6 +2301,7 @@
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\TrackingBundle\Resources\config\doctrine">System\TrackingBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\NavigationBundle\Resources\config\doctrine">System\NavigationBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ReportGenerationBundle\Resources\config\doctrine">System\ReportGenerationBundle\Entity</argument>
@@ -2316,6 +2320,26 @@
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\TrackingBundle\Resources\config\doctrine">System\TrackingBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\NavigationBundle\Resources\config\doctrine">System\NavigationBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ReportGenerationBundle\Resources\config\doctrine">System\ReportGenerationBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>System\TrackingBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\TrackingBundle\Resources\config\doctrine">System\TrackingBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\NavigationBundle\Resources\config\doctrine">System\NavigationBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ReportGenerationBundle\Resources\config\doctrine">System\ReportGenerationBundle\Entity</argument>
@@ -2334,6 +2358,7 @@
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\TrackingBundle\Resources\config\doctrine">System\TrackingBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\NavigationBundle\Resources\config\doctrine">System\NavigationBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ReportGenerationBundle\Resources\config\doctrine">System\ReportGenerationBundle\Entity</argument>
@@ -2352,6 +2377,7 @@
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ResourceBundle\Resources\config\doctrine">System\ResourceBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ProjectBundle\Resources\config\doctrine">System\ProjectBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ClientBundle\Resources\config\doctrine">System\ClientBundle\Entity</argument>
+                        <argument key="C:\xampp\htdocs\Zhvillues\src\System\TrackingBundle\Resources\config\doctrine">System\TrackingBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\UserBundle\Resources\config\doctrine">System\UserBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\NavigationBundle\Resources\config\doctrine">System\NavigationBundle\Entity</argument>
                         <argument key="C:\xampp\htdocs\Zhvillues\src\System\ReportGenerationBundle\Resources\config\doctrine">System\ReportGenerationBundle\Entity</argument>
