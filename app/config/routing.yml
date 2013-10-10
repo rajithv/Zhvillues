@@ -1,3 +1,7 @@
+system_report_generation:
+    resource: "@SystemReportGenerationBundle/Resources/config/routing.yml"
+    prefix:   /
+
 logout:
     path: /sec/logout
 login:
