@@ -39,7 +39,7 @@ class NewConsumableController extends Controller
             $em->flush();
             
             $response = array(
-              'message' => "New client added successfully.",
+              'message' => "New consumable added successfully.",
             );
         
             return $this->redirect($this->generateUrl('add_new_consumable', $response));
