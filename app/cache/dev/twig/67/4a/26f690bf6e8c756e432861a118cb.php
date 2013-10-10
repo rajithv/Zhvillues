@@ -35,11 +35,11 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
     public function block_body($context, array $blocks = array())
     {
         // line 6
-        echo "Hello Project Manager ";
+        echo "<h1>Hello Project Manager ";
         echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
-        echo "!
+        echo "!</h1>
 <div> </div>
-
+<h2>Adding new items</h2>
 <table>
 
 <tr>
@@ -87,7 +87,14 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
 </tr>
 
 
-</table?
+</table>
+
+<h2>Checking excisting projects</h2>
+
+<td>
+       
+        <button type=\"submit\">Select a project and get reports</button>
+
 ";
     }
 
