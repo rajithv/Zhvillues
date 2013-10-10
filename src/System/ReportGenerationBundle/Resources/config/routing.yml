@@ -1,3 +1,15 @@
-system_report_generation_homepage:
+system_resource_homepage:
     pattern:  /hello/{name}
-    defaults: { _controller: SystemReportGenerationBundle:Default:index }
+    defaults: { _controller: SystemResourceBundle:Default:index }
+
+add_new_consumable:
+    pattern: /addNewConsumable
+    defaults: { _controller: SystemResourceBundle:NewConsumable:add}
+
+add_new_machinery:
+    pattern: /addNewMachinery
+    defaults: { _controller: SystemResourceBundle:NewMachinery:add }
+
+add_new_hrreport:
+    pattern: /addNewHRReport
+    defaults: { _controller: SystemReportGenerationBundle:HRReportGeneration:add }

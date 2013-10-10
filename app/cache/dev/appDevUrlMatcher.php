@@ -133,6 +133,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // add_new_hrreport
+        if ($pathinfo === '/addNewHRReport') {
+            return array (  '_controller' => 'System\\ReportGenerationBundle\\Controller\\HRReportGenerationController::addAction',  '_route' => 'add_new_hrreport',);
+        }
+
         if (0 === strpos($pathinfo, '/sec/log')) {
             // logout
             if ($pathinfo === '/sec/logout') {

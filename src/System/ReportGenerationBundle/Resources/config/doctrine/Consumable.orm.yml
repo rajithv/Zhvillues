@@ -1,0 +1,21 @@
+System\ResourceBundle\Entity\Consumable:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 255
+        quantity:
+            type: float
+        unitValue:
+            type: float
+        pendingOrders:
+            type: float
+        toBeOrdered:
+            type: float
+    lifecycleCallbacks: {  }
