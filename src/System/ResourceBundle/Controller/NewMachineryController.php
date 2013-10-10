@@ -31,7 +31,7 @@ class NewMachineryController extends Controller
             
             $machinery=$form->getData();
             $machinery->setProject("");
-            $machinery->setStatus("");
+            $machinery->setStatus("Available");
             $machinery->setOperator("");
             $em = $this->getDoctrine()->getManager();
             $em->persist($machinery);
