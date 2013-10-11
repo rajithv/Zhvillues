@@ -19,6 +19,7 @@
     <div class="block">
         {% block content %}
         <form action="{{ path('create_project') }}" method="POST" id="contact_form">
+            {{message}}
             <div>
                 {{ form_label(form.projectID,'Project Code') }}
                 {{ form_errors(form.projectID) }}
