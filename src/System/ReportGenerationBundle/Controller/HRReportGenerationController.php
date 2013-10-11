@@ -8,6 +8,8 @@ namespace System\ReportGenerationBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use System\ResourceBundle\Entity\HR;
 use Symfony\Component\HttpFoundation\Request;
+use System\TrackingBundle\Entity\Expence;
+use System\ProjectBundle\Entity\Budget;
 
 class HRReportGenerationController extends Controller
 {
@@ -15,7 +17,8 @@ class HRReportGenerationController extends Controller
     {
         $message = $request->get('message', null);
         $hr = new HR();
-        
+        $budget = new Budget();
+        $expence = new Expence();
         $form = $this->createFormBuilder($hr)
                 ->add('Project', 'text')
                 ->add('load', 'submit')
@@ -34,6 +37,9 @@ class HRReportGenerationController extends Controller
             )->setParameter('tosearch', $hr->getCode());
             $products = $query->getResult(); */
             $hr=$form->getData();
+            $proj = $hr->getProject();
+            $budget->setProjectID($proj);
+            $expence->setProjectID($budget->getProjectID());
             $em = $this->getDoctrine()->getManager();
             $query = $em->createQuery(
             //'SELECT h FROM SystemResourceBundle:HR h WHERE h.code = :tobesearched'
@@ -45,21 +51,40 @@ class HRReportGenerationController extends Controller
             for ( $i=0;$i<sizeof($products);$i=$i+1){
                 $totalhrcost = $totalhrcost + $products[$i]->getRateHour()*$workedhours[$i%3];
             }
-            //$em->persist($hr);
-            //$em->flush();
-            //{$products->$code}
-            //search for 3rfas
-            //echo get_class($products[0]);
-            //$hr = $products[0];
+            $expence->setProjectID($budget->getProjectID());
+            $em = $this->getDoctrine()->getManager();
+            //'SELECT h FROM SystemResourceBundle:HR h WHERE h.code = :tobesearched'
+            $budgetquery = $em->createQuery(
+            'SELECT h FROM SystemProjectBundle:Budget h WHERE h.projectID = :tobesearched'
+            )->setParameter('tobesearched', $budget->getProjectID());
+            $budgetproducts = $budgetquery->getResult();
+            $expencequery = $em->createQuery(
+            'SELECT h FROM SystemTrackingBundle:Expence h WHERE h.projectID = :tobesearched'
+            )->setParameter('tobesearched', $expence->getProjectID());
+            $expenceproducts = $expencequery->getResult();
+            $totalexpenceconsumablecost=0;
+            $totalexpencemachinerycost=0;
+            $totalexpencehrcost=0;
+            //echo(sizeof($budgetproducts));
+            //$workedhours = array(0=>7,1=>8,2=>9);
+            for ( $i=0;$i<sizeof($expenceproducts);$i=$i+1){
+                $totalexpencehrcost = $totalexpencehrcost + $expenceproducts[$i]->gethrCost();
+                $totalexpencemachinerycost = $totalexpencemachinerycost + $expenceproducts[$i]->getmachineryCost();
+                $totalexpenceconsumablecost = $totalexpenceconsumablecost + $expenceproducts[$i]->getconsumableCost();
+            }
+            $totalhrcost = $totalhrcost*30*$budgetproducts[0]->getTimeEstimate();
+            //$totalexpectedconsumablecost=$budgetproducts[0]->getconsumableCost();
+            //$totalexpectedmachinerycost=$budgetproducts[0]->getmachineryCost();
+            $totalexpectedhrcost=$budgetproducts[0]->gethrCost();
             $hr->setName($products[0]->getName());
             $response = array('message' => "New Human Resource added successfully.",);
             $data = $hr->getProject();
             $sentdata = array('form' => $form->createView(),
                     'totalhrcost'=>$totalhrcost,
-                    'code'=>$products[0]->getCode(),
-                    'name'=>$products[0]->getName(),
+                    'totalexpectedhrcost'=>$totalexpectedhrcost,
+                    'totalexpencehrcost'=>$totalexpencehrcost,
                     'project'=>$products[0]->getProject(),
-                    'department'=>$products[0]->getDepartment());
+                    );
             return $this->render('SystemReportGenerationBundle:Pages:NewHRReport.html.twig', $sentdata);
             //return $this->redirect($this->generateUrl('add', $response));
         }
