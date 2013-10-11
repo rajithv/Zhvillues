@@ -2,6 +2,6 @@ system_user_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: SystemUserBundle:Default:index }
 
-login:
-    pattern: /login
-    defaults: { _controller: SystemUserBundle:Security:login }
+#login:
+#    pattern: /login
+#    defaults: { _controller: SystemUserBundle:Security:login }

@@ -22,6 +22,19 @@ class ActualExpencesController extends Controller {
                 ->getForm();
         $form->handleRequest($request);
         
+        if (isset($_POST['form_Submit'])) { 
+           $expence = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($expence);
+            $em->flush();
+            
+            $response = array('message' => "Actual Expences Updated Successfully");
+            
+            return $this->redirect($this->generateUrl('create_actual_expences', $response));
+        } else if (isset($_POST['form_reset'])) { 
+            return $this->render('SystemTrackingBundle:ActualExpences:createActualExpences.html.twig', array('form' => $form->createView(), 'message' => $message)); 
+        }
+        
         if($form->isValid()){
             $expence = $form->getData();
             $em = $this->getDoctrine()->getManager();

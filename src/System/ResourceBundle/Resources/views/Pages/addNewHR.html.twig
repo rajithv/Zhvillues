@@ -19,6 +19,7 @@
     <div class="block">
         {% block content %}
         <form action="{{ path('add_new_hr') }}" method="POST" id="contact_form">
+           {{message}}
             <div>
                 {{ form_label(form.code,'HR ID') }}
                 {{ form_errors(form.code) }}
@@ -45,7 +46,13 @@
                 {{ form_widget(form.rateHour) }}
            </div><br>
            
-           <button type="submit" id="form_Submit" class="sf-button">
+           <div>
+                {{ form_label(form.project,'Allocated Project') }} 
+                {{ form_errors(form.project) }}
+                {{ form_widget(form.project) }}
+           </div><br>
+           
+           <button type="submit" name="form_Submit" class="sf-button">
                 <span class="border-l">
                     <span class="border-r">
                         <span class="btn-bg">Submit</span>
@@ -53,7 +60,7 @@
                 </span>
            </button>
                                 
-           <button type="reset" id="form_reset" class="sf-button">
+           <button type="reset" name="form_reset" class="sf-button">
                 <span class="border-l">
                     <span class="border-r">
                         <span class="btn-bg">Reset</span>

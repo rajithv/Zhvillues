@@ -51,10 +51,9 @@ class __TwigTemplate_18a8101e3da61b499364565095f456d8 extends Twig_Template
         echo "    ";
         $this->displayBlock('content_header', $context, $blocks);
         // line 18
-        echo "
-    <div class=\"block\">
+        echo "    <div class=\"block\">
         ";
-        // line 20
+        // line 19
         $this->displayBlock('content', $context, $blocks);
     }
 
@@ -71,100 +70,107 @@ class __TwigTemplate_18a8101e3da61b499364565095f456d8 extends Twig_Template
     ";
     }
 
-    // line 20
+    // line 19
     public function block_content($context, array $blocks = array())
     {
+        // line 20
+        echo "        
+         ";
         // line 21
-        echo "        <form action=\"";
+        echo twig_escape_filter($this->env, (isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "html", null, true);
+        echo "
+            
+        <form action=\"";
+        // line 23
         echo $this->env->getExtension('routing')->getPath("create_budget");
         echo "\" method=\"POST\" id=\"contact_form\">
             <div>
                 ";
-        // line 23
+        // line 25
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "projectID"), 'label', array("label" => "Project Code"));
         echo "
                 ";
-        // line 24
+        // line 26
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "projectID"), 'errors');
         echo "
                 ";
-        // line 25
+        // line 27
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "projectID"), 'widget');
         echo "
             </div><br>           
             <div>
                 ";
-        // line 28
+        // line 30
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "machineryCost"), 'label', array("label" => "Machinery Cost"));
         echo "
                 ";
-        // line 29
+        // line 31
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "machineryCost"), 'errors');
         echo "
                 ";
-        // line 30
+        // line 32
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "machineryCost"), 'widget');
         echo "
             </div><br>       
             <div>
                 ";
-        // line 33
+        // line 35
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "consumableCost"), 'label', array("label" => "Consumable Cost"));
         echo " 
                 ";
-        // line 34
+        // line 36
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "consumableCost"), 'errors');
         echo "
                 ";
-        // line 35
+        // line 37
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "consumableCost"), 'widget');
         echo "
            </div><br>
            <div>
                 ";
-        // line 38
+        // line 40
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "hrCost"), 'label', array("label" => "HR Cost"));
         echo " 
                 ";
-        // line 39
+        // line 41
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "hrCost"), 'errors');
         echo "
                 ";
-        // line 40
+        // line 42
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "hrCost"), 'widget');
         echo "
            </div><br>
            <div>
                 ";
-        // line 43
+        // line 45
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "timeEstimate"), 'label', array("label" => "Time Estimate(in months)"));
         echo "
                 ";
-        // line 44
+        // line 46
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "timeEstimate"), 'errors');
         echo "<br>
                 ";
-        // line 45
+        // line 47
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "timeEstimate"), 'widget');
         echo "
            </div><br>
            <div>
                 ";
-        // line 48
+        // line 50
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "variationPercentage"), 'label', array("label" => "Variation Percentage"));
         echo "
                 ";
-        // line 49
+        // line 51
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "variationPercentage"), 'errors');
         echo "
                 ";
-        // line 50
+        // line 52
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "variationPercentage"), 'widget');
         echo "
            </div><br>
            
            
-           <button type=\"submit\" id=\"form_Submit\" class=\"sf-button\">
+           <button type=\"submit\" name=\"buttonSub\" class=\"sf-button\">
                 <span class=\"border-l\">
                     <span class=\"border-r\">
                         <span class=\"btn-bg\">Submit</span>
@@ -172,7 +178,7 @@ class __TwigTemplate_18a8101e3da61b499364565095f456d8 extends Twig_Template
                 </span>
            </button>
                                 
-           <button type=\"reset\" id=\"form_reset\" class=\"sf-button\">
+           <button type=\"reset\" name=\"buttonRes\" class=\"sf-button\">
                 <span class=\"border-l\">
                     <span class=\"border-r\">
                         <span class=\"btn-bg\">Reset</span>
@@ -199,6 +205,6 @@ class __TwigTemplate_18a8101e3da61b499364565095f456d8 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  162 => 50,  158 => 49,  154 => 48,  148 => 45,  144 => 44,  140 => 43,  134 => 40,  130 => 39,  126 => 38,  120 => 35,  116 => 34,  112 => 33,  106 => 30,  102 => 29,  98 => 28,  92 => 25,  88 => 24,  84 => 23,  78 => 21,  75 => 20,  65 => 11,  62 => 10,  58 => 20,  54 => 18,  51 => 10,  48 => 9,  42 => 7,  35 => 4,  32 => 3,);
+        return array (  168 => 52,  164 => 51,  160 => 50,  154 => 47,  150 => 46,  146 => 45,  140 => 42,  136 => 41,  132 => 40,  126 => 37,  122 => 36,  118 => 35,  112 => 32,  108 => 31,  104 => 30,  98 => 27,  94 => 26,  90 => 25,  85 => 23,  80 => 21,  77 => 20,  74 => 19,  64 => 11,  61 => 10,  57 => 19,  54 => 18,  51 => 10,  48 => 9,  42 => 7,  35 => 4,  32 => 3,);
     }
 }
