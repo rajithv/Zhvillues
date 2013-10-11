@@ -8,7 +8,6 @@
 
 {% block body %}
     {% block content_header %}
-
     <!-- Logo -->
     <div id="logo">
         <h1 id="title">Add New Machinery</h1><br>
@@ -18,7 +17,11 @@
 
     <div class="block">
         {% block content %}
+   
         <form action="{{ path('add_new_machinery') }}" method="POST" id="contact_form">
+            
+                     {{message}}
+            
             <div>
                 {{ form_label(form.code,'Machine Code') }}
                 {{ form_errors(form.code) }}
@@ -45,7 +48,7 @@
                 {{ form_widget(form.depRate) }}
            </div><br>
            
-           <button type="submit" id="form_Submit" class="sf-button">
+           <button type="submit" name="form_Submit" class="sf-button">
                 <span class="border-l">
                     <span class="border-r">
                         <span class="btn-bg">Submit</span>
@@ -53,7 +56,7 @@
                 </span>
            </button>
                                 
-           <button type="reset" id="form_reset" class="sf-button">
+           <button type="reset" name="form_reset" class="sf-button">
                 <span class="border-l">
                     <span class="border-r">
                         <span class="btn-bg">Reset</span>

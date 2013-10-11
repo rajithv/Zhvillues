@@ -28,6 +28,22 @@ class NewConsumableController extends Controller
         
         $form->handleRequest($request);
         
+        if (isset($_POST['form_Submit'])) { 
+           $consumable=$form->getData();
+            $consumable->setPendingOrders(0);
+            $consumable->setToBeOrdered(0);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($consumable);
+            $em->flush();
+            
+            $response = array(
+              'message' => "New consumable added successfully.",
+            );
+        
+            return $this->redirect($this->generateUrl('add_new_consumable', $response));
+        } else if (isset($_POST['form_reset'])) { 
+             return $this->render('SystemResourceBundle:Pages:addNewConsumable.html.twig', array('form' => $form->createView(),'message' => $message));
+        }
                 
         if($form->isValid()){
             

@@ -51,6 +51,8 @@ class __TwigTemplate_940175af5453e3ee620133d197fbdf9b extends Twig_Template
         echo "    ";
         $this->displayBlock('content_header', $context, $blocks);
         // line 18
+        echo "        ";
+        echo twig_escape_filter($this->env, (isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "html", null, true);
         echo "
     <div class=\"block\">
         ";
@@ -148,7 +150,7 @@ class __TwigTemplate_940175af5453e3ee620133d197fbdf9b extends Twig_Template
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "address"), 'widget');
         echo "
            </div><br>
-           <button type=\"submit\" id=\"form_Submit\" class=\"sf-button\">
+           <button type=\"submit\" name=\"form_Submit\" class=\"sf-button\">
                 <span class=\"border-l\">
                     <span class=\"border-r\">
                         <span class=\"btn-bg\">Submit</span>
@@ -156,7 +158,7 @@ class __TwigTemplate_940175af5453e3ee620133d197fbdf9b extends Twig_Template
                 </span>
            </button>
                                 
-           <button type=\"reset\" id=\"form_reset\" class=\"sf-button\">
+           <button type=\"reset\" name=\"form_reset\" class=\"sf-button\">
                 <span class=\"border-l\">
                     <span class=\"border-r\">
                         <span class=\"btn-bg\">Reset</span>
@@ -183,6 +185,6 @@ class __TwigTemplate_940175af5453e3ee620133d197fbdf9b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  148 => 45,  144 => 44,  140 => 43,  134 => 40,  130 => 39,  126 => 38,  120 => 35,  116 => 34,  112 => 33,  106 => 30,  102 => 29,  98 => 28,  92 => 25,  88 => 24,  84 => 23,  78 => 21,  75 => 20,  65 => 11,  62 => 10,  58 => 20,  54 => 18,  51 => 10,  48 => 9,  42 => 7,  35 => 4,  32 => 3,);
+        return array (  150 => 45,  146 => 44,  142 => 43,  136 => 40,  132 => 39,  128 => 38,  122 => 35,  118 => 34,  114 => 33,  108 => 30,  104 => 29,  100 => 28,  94 => 25,  90 => 24,  86 => 23,  80 => 21,  77 => 20,  67 => 11,  64 => 10,  60 => 20,  54 => 18,  51 => 10,  48 => 9,  42 => 7,  35 => 4,  32 => 3,);
     }
 }

@@ -7,17 +7,17 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("::base.html.twig");
+        $this->parent = $this->env->loadTemplate("TwigBundle::layout.html.twig");
 
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
+            'head' => array($this, 'block_head'),
             'body' => array($this, 'block_body'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "TwigBundle::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -26,30 +26,40 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
     }
 
     // line 3
-    public function block_title($context, array $blocks = array())
+    public function block_head($context, array $blocks = array())
     {
-        echo "SystemTestBundle:Home:Home";
+        // line 4
+        echo "    <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/acmedemo/css/demo.css"), "html", null, true);
+        echo "\" />
+";
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = array())
     {
-        // line 6
+        // line 8
         echo "<h1>Hello Project Manager ";
         echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
         echo "!</h1>
 <div> </div>
-<h2>Adding new items</h2>
+<h3>Adding new items</h3>
 <table>
 
 <tr>
 <td> 
     
     <form action=\"";
-        // line 14
+        // line 16
         echo $this->env->getExtension('routing')->getPath("add");
         echo "\" method=\"post\">
-    <button type=\"submit\">Add a New Client</button>
+      <button type=\"submit\" name=\"addClient\" class=\"sf-button\">
+                <span class=\"border-l\">
+                    <span class=\"border-r\">
+                        <span class=\"btn-bg\">Add a New Client</span>
+                    </span>
+                 </span>
+     </button>
     </form></td>
     
 </tr>
@@ -58,10 +68,16 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
 <td> 
     
     <form action=\"";
-        // line 23
+        // line 31
         echo $this->env->getExtension('routing')->getPath("create_budget");
         echo "\" method=\"post\">
-    <button type=\"submit\">Add a New Budget</button>
+        <button type=\"submit\" name=\"addBudget\" class=\"sf-button\">
+                <span class=\"border-l\">
+                    <span class=\"border-r\">
+                        <span class=\"btn-bg\">Add a New Budget</span>
+                    </span>
+                 </span>
+           </button>
     </form></td>
     
 </tr>
@@ -69,10 +85,16 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
 <tr>
 <td> 
         <form action=\"";
-        // line 31
+        // line 45
         echo $this->env->getExtension('routing')->getPath("create_project");
         echo "\" method=\"post\">
-        <button type=\"submit\">Add a New Project</button>
+          <button type=\"submit\" name=\"addProject\" class=\"sf-button\">
+                <span class=\"border-l\">
+                    <span class=\"border-r\">
+                        <span class=\"btn-bg\">Add a New Project</span>
+                    </span>
+                 </span>
+           </button>
         </form></td>
 </tr>
 
@@ -81,26 +103,46 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
     <h4>Add new resources</h4>
         <td> 
        <form action=\"";
-        // line 40
+        // line 60
         echo $this->env->getExtension('routing')->getPath("add_new_consumable");
         echo "\" method=\"post\">
-       <button type=\"submit\">Add a New Consumable</button>
+          <button type=\"submit\" name=\"addConsumable\" class=\"sf-button\">
+                <span class=\"border-l\">
+                    <span class=\"border-r\">
+                        <span class=\"btn-bg\">Add a New Consumable</span>
+                    </span>
+                 </span>
+           </button>
        </form></td>
        
        <td> 
         <form action=\"";
-        // line 45
+        // line 71
         echo $this->env->getExtension('routing')->getPath("add_new_machinery");
         echo "\" method=\"post\">
-        <button type=\"submit\">Add a New Machinary</button>
+           <button type=\"submit\" name=\"addMachine\" class=\"sf-button\">
+                <span class=\"border-l\">
+                    <span class=\"border-r\">
+                        <span class=\"btn-bg\">Add a New Machinary</span>
+                    </span>
+                 </span>
+           </button>
         </form></td>
         
        <td> 
        <form action=\"";
-        // line 50
+        // line 82
         echo $this->env->getExtension('routing')->getPath("add_new_hr");
-        echo "\" method=\"post\">
-        <button type=\"submit\">Add a New HR</button>
+        echo "\" method=\"post\">     
+         <button type=\"submit\" name=\"addHR\" class=\"sf-button\">
+                <span class=\"border-l\">
+                    <span class=\"border-r\">
+                        <span class=\"btn-bg\">Add a New HR</span>
+                    </span>
+                 </span>
+           </button>
+        
+        
         </form></td>
        
 </tr>
@@ -108,12 +150,16 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
 
 </table>
 
-<h2>Checking excisting projects</h2>
+<h3>Checking excisting projects</h3>
 
 <td>
-       
-        <button type=\"submit\">Select a project and get reports</button>
-
+           <button type=\"submit\" name=\"getReports\" class=\"sf-button\">
+                <span class=\"border-l\">
+                    <span class=\"border-r\">
+                        <span class=\"btn-bg\">Select a project and get reports</span>
+                    </span>
+                 </span>
+           </button>
 ";
     }
 
@@ -129,6 +175,6 @@ class __TwigTemplate_674a26f690bf6e8c756e432861a118cb extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  101 => 50,  93 => 45,  85 => 40,  73 => 31,  62 => 23,  50 => 14,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  135 => 82,  121 => 71,  107 => 60,  89 => 45,  72 => 31,  54 => 16,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }
