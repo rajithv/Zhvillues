@@ -78,148 +78,152 @@ class __TwigTemplate_44171c8c740c4fda6f12c5435a4aca25 extends Twig_Template
         echo "        <form action=\"";
         echo $this->env->getExtension('routing')->getPath("create_project");
         echo "\" method=\"POST\" id=\"contact_form\">
+            ";
+        // line 22
+        echo twig_escape_filter($this->env, (isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "html", null, true);
+        echo "
             <div>
                 ";
-        // line 23
+        // line 24
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "projectID"), 'label', array("label" => "Project Code"));
         echo "
                 ";
-        // line 24
+        // line 25
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "projectID"), 'errors');
         echo "
                 ";
-        // line 25
+        // line 26
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "projectID"), 'widget');
         echo "
             </div><br> 
             <div>
                 ";
-        // line 28
+        // line 29
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "client"), 'label', array("label" => "Client"));
         echo "
                 ";
-        // line 29
+        // line 30
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "client"), 'errors');
         echo "
                 ";
-        // line 30
+        // line 31
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "client"), 'widget');
         echo "
             </div><br> 
             <div>
                 ";
-        // line 33
+        // line 34
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "manager"), 'label', array("label" => "Manager"));
         echo "
                 ";
-        // line 34
+        // line 35
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "manager"), 'errors');
         echo "
                 ";
-        // line 35
+        // line 36
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "manager"), 'widget');
         echo "
             </div><br>       
             <div>
                 ";
-        // line 38
+        // line 39
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "budget"), 'label', array("label" => "Budget"));
         echo " 
                 ";
-        // line 39
+        // line 40
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "budget"), 'errors');
         echo "
                 ";
-        // line 40
+        // line 41
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "budget"), 'widget');
         echo "
            </div><br>
            <div>
                 ";
-        // line 43
+        // line 44
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfConsumable"), 'label', array("label" => "List Of Consumable"));
         echo " 
                 ";
-        // line 44
+        // line 45
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfConsumable"), 'errors');
         echo "<br>
                 ";
-        // line 45
+        // line 46
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfConsumable"), 'widget');
         echo "
            </div><br>
            <div>
                 ";
-        // line 48
+        // line 49
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfMachinery"), 'label', array("label" => "List Of Machinery"));
         echo "
                 ";
-        // line 49
+        // line 50
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfMachinery"), 'errors');
         echo "<br>
                 ";
-        // line 50
+        // line 51
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfMachinery"), 'widget');
         echo "
            </div><br>
            <div>
                 ";
-        // line 53
+        // line 54
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfHR"), 'label', array("label" => "List Of HR"));
         echo "
                 ";
-        // line 54
+        // line 55
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfHR"), 'errors');
         echo "
                 ";
-        // line 55
+        // line 56
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfHR"), 'widget');
         echo "
            </div><br>
            <div>
                 ";
-        // line 58
+        // line 59
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfExpences"), 'label', array("label" => "List Of Expences"));
         echo "
                 ";
-        // line 59
+        // line 60
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfExpences"), 'errors');
         echo "
                 ";
-        // line 60
+        // line 61
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "listOfExpences"), 'widget');
         echo "
            </div><br>
            <div>
                 ";
-        // line 63
+        // line 64
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateOfCompletion"), 'label', array("label" => "Date Of Completion"));
         echo "
                 ";
-        // line 64
+        // line 65
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateOfCompletion"), 'errors');
         echo "<br>
                 ";
-        // line 65
+        // line 66
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateOfCompletion"), 'widget');
         echo "
            </div><br>
            <div>
                 ";
-        // line 68
+        // line 69
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "status"), 'label', array("label" => "Status"));
         echo "
                 ";
-        // line 69
+        // line 70
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "status"), 'errors');
         echo "
                 ";
-        // line 70
+        // line 71
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "status"), 'widget');
         echo "
            </div><br>
            
-           <button type=\"submit\" id=\"form_Submit\" class=\"sf-button\">
+           <button type=\"submit\" name=\"form_Submit\" class=\"sf-button\">
                 <span class=\"border-l\">
                     <span class=\"border-r\">
                         <span class=\"btn-bg\">Submit</span>
@@ -227,7 +231,7 @@ class __TwigTemplate_44171c8c740c4fda6f12c5435a4aca25 extends Twig_Template
                 </span>
            </button>
                                 
-           <button type=\"reset\" id=\"form_reset\" class=\"sf-button\">
+           <button type=\"reset\" name=\"form_reset\" class=\"sf-button\">
                 <span class=\"border-l\">
                     <span class=\"border-r\">
                         <span class=\"btn-bg\">Reset</span>
@@ -254,6 +258,6 @@ class __TwigTemplate_44171c8c740c4fda6f12c5435a4aca25 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  218 => 70,  214 => 69,  210 => 68,  204 => 65,  200 => 64,  196 => 63,  190 => 60,  186 => 59,  182 => 58,  176 => 55,  172 => 54,  168 => 53,  162 => 50,  158 => 49,  154 => 48,  148 => 45,  144 => 44,  140 => 43,  134 => 40,  130 => 39,  126 => 38,  120 => 35,  116 => 34,  112 => 33,  106 => 30,  102 => 29,  98 => 28,  92 => 25,  88 => 24,  84 => 23,  78 => 21,  75 => 20,  65 => 11,  62 => 10,  58 => 20,  54 => 18,  51 => 10,  48 => 9,  42 => 7,  35 => 4,  32 => 3,);
+        return array (  222 => 71,  218 => 70,  214 => 69,  208 => 66,  204 => 65,  200 => 64,  194 => 61,  190 => 60,  186 => 59,  180 => 56,  176 => 55,  172 => 54,  166 => 51,  162 => 50,  158 => 49,  152 => 46,  148 => 45,  144 => 44,  138 => 41,  134 => 40,  130 => 39,  124 => 36,  120 => 35,  116 => 34,  110 => 31,  106 => 30,  102 => 29,  96 => 26,  92 => 25,  88 => 24,  83 => 22,  78 => 21,  75 => 20,  65 => 11,  62 => 10,  58 => 20,  54 => 18,  51 => 10,  48 => 9,  42 => 7,  35 => 4,  32 => 3,);
     }
 }
