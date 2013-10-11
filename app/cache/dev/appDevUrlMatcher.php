@@ -141,7 +141,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             // add_new_graph
             if ($pathinfo === '/addNewGraph') {
-                return array (  '_controller' => 'System\\ReportGenerationBundle\\Controller\\GraphGenerationController::addAction',  '_route' => 'add_new_graph',);
+                return array (  '_controller' => 'SystemReportGenerationBundle:GraphGeneration:add',  '_route' => 'add_new_graph',);
             }
 
             // add_new_plreport
