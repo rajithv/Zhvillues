@@ -3,12 +3,16 @@
 namespace System\ProjectBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use Symfony\Component\HttpFoundation\Request;
+use System\ProjectBundle\Entity\Project;
 class ProjectCreationController extends Controller {
 
-    public function createProjectAction() {
+    public function createProjectAction(Request $request) {
 
-        $form = $this->createFormBuilder()
+        $message = $request->get('message', null);
+        $project = new Project();
+        
+        $form = $this->createFormBuilder($project)
                 ->add('projectID', 'text')
                 ->add('client', 'text')
                 ->add('manager', 'text')
@@ -22,7 +26,38 @@ class ProjectCreationController extends Controller {
                 ->add('create', 'submit')
                 ->getForm();
 
-        return $this->render('SystemProjectBundle:ProjectCreation:createProject.html.twig', array('form' => $form->createView()));
+        $form->handleRequest($request);
+        
+       if (isset($_POST['form_Submit'])) { 
+           $project = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($project);
+            $em->flush();
+
+            $response = array('message' => "New Project Created Successfully");
+
+            return $this->redirect($this->generateUrl('create_project', $response));
+            
+        } else if (isset($_POST['form_reset'])) { 
+             return $this->render('SystemProjectBundle:ProjectCreation:createProject.html.twig', array('form' => $form->createView(), 'message' => $message));
+        }
+        
+        
+        if ($form->isValid()) {
+            $project = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($project);
+            $em->flush();
+
+            $response = array('message' => "New Project Created Successfully");
+
+            return $this->redirect($this->generateUrl('create_project', $response));
+        }
+
+        return $this->render('SystemProjectBundle:ProjectCreation:createProject.html.twig', array('form' => $form->createView(), 'message' => $message));
+
+
+        //return $this->render('SystemProjectBundle:ProjectCreation:createProject.html.twig', array('form' => $form->createView()));
         //return $this ->render('SystemProjectBundle:ProjectCreation:createProject.html.twig');
     }
 

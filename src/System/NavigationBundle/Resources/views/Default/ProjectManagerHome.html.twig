@@ -1,18 +1,26 @@
-{% extends "::base.html.twig" %}
+{% extends "TwigBundle::layout.html.twig" %}
 
-{% block title %}SystemTestBundle:Home:Home{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" />
+{% endblock %}
 
 {% block body %}
 <h1>Hello Project Manager {{ name }}!</h1>
 <div> </div>
-<h2>Adding new items</h2>
+<h3>Adding new items</h3>
 <table>
 
 <tr>
 <td> 
     
     <form action="{{ path('add') }}" method="post">
-    <button type="submit">Add a New Client</button>
+      <button type="submit" name="addClient" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Add a New Client</span>
+                    </span>
+                 </span>
+     </button>
     </form></td>
     
 </tr>
@@ -21,7 +29,13 @@
 <td> 
     
     <form action="{{ path('create_budget') }}" method="post">
-    <button type="submit">Add a New Budget</button>
+        <button type="submit" name="addBudget" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Add a New Budget</span>
+                    </span>
+                 </span>
+           </button>
     </form></td>
     
 </tr>
@@ -29,7 +43,13 @@
 <tr>
 <td> 
         <form action="{{ path('create_project') }}" method="post">
-        <button type="submit">Add a New Project</button>
+          <button type="submit" name="addProject" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Add a New Project</span>
+                    </span>
+                 </span>
+           </button>
         </form></td>
 </tr>
 
@@ -38,17 +58,37 @@
     <h4>Add new resources</h4>
         <td> 
        <form action="{{ path('add_new_consumable') }}" method="post">
-       <button type="submit">Add a New Consumable</button>
+          <button type="submit" name="addConsumable" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Add a New Consumable</span>
+                    </span>
+                 </span>
+           </button>
        </form></td>
        
        <td> 
         <form action="{{ path('add_new_machinery') }}" method="post">
-        <button type="submit">Add a New Machinary</button>
+           <button type="submit" name="addMachine" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Add a New Machinary</span>
+                    </span>
+                 </span>
+           </button>
         </form></td>
         
        <td> 
-       <form action="{{ path('add_new_hr') }}" method="post">
-        <button type="submit">Add a New HR</button>
+       <form action="{{ path('add_new_hr') }}" method="post">     
+         <button type="submit" name="addHR" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Add a New HR</span>
+                    </span>
+                 </span>
+           </button>
+        
+        
         </form></td>
        
 </tr>
@@ -56,10 +96,14 @@
 
 </table>
 
-<h2>Checking excisting projects</h2>
+<h3>Checking excisting projects</h3>
 
 <td>
-       
-        <button type="submit">Select a project and get reports</button>
-
+           <button type="submit" name="getReports" class="sf-button">
+                <span class="border-l">
+                    <span class="border-r">
+                        <span class="btn-bg">Select a project and get reports</span>
+                    </span>
+                 </span>
+           </button>
 {% endblock %}

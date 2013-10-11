@@ -15,9 +15,11 @@
     </div> 
     <div style="clear: both"></div>
     {% endblock %}
-
     <div class="block">
         {% block content %}
+        
+         {{message}}
+            
         <form action="{{ path('create_budget') }}" method="POST" id="contact_form">
             <div>
                 {{ form_label(form.projectID,'Project Code') }}
@@ -51,7 +53,7 @@
            </div><br>
            
            
-           <button type="submit" id="form_Submit" class="sf-button">
+           <button type="submit" name="buttonSub" class="sf-button">
                 <span class="border-l">
                     <span class="border-r">
                         <span class="btn-bg">Submit</span>
@@ -59,7 +61,7 @@
                 </span>
            </button>
                                 
-           <button type="reset" id="form_reset" class="sf-button">
+           <button type="reset" name="buttonRes" class="sf-button">
                 <span class="border-l">
                     <span class="border-r">
                         <span class="btn-bg">Reset</span>

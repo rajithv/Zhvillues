@@ -27,6 +27,20 @@ class NewHRController extends Controller
                        
         $form->handleRequest($request); 
         
+        if (isset($_POST['form_Submit'])) { 
+           $hr=$form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($hr);
+            $em->flush();
+            
+            $response = array('message' => "New Human Resource added successfully.",);
+            //echo     $this->generateUrl('add_new_hr', $response); 
+            return $this->redirect($this->generateUrl('add_new_hr', $response));
+            
+        } else if (isset($_POST['form_reset'])) { 
+            return $this->render('SystemResourceBundle:Pages:addNewHR.html.twig', array('form' => $form->createView(), 'message'=>$message)); 
+        }
+        
         if($form->isValid()){
             
             $hr=$form->getData();

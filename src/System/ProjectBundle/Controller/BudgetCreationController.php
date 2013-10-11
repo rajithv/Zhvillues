@@ -24,6 +24,21 @@ class BudgetCreationController extends Controller {
                 ->getForm();
         $form->handleRequest($request);
 
+        if (isset($_POST['buttonSub'])) {                
+                $budget = $form->getData();
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($budget);
+                $em->flush();
+
+                $response = array('message' => "New Budget Created Successfully");
+
+                return $this->redirect($this->generateUrl('create_budget', $response));
+        } else if (isset($_POST['buttonRes'])) { 
+            return $this->render('SystemProjectBundle:BudgetCreation:createBudget.html.twig', array('form' => $form->createView(), 'message' => $message)); 
+        }
+        
+        
+        
         if ($form->isValid()) {
             $budget = $form->getData();
             $em = $this->getDoctrine()->getManager();

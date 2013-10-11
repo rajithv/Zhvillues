@@ -26,7 +26,25 @@ class NewMachineryController extends Controller
                 ->getForm();
         
         $form->handleRequest($request);
-                       
+       
+        if (isset($_POST['form_Submit'])) { 
+           $machinery=$form->getData();
+            $machinery->setProject("");
+            $machinery->setStatus("Available");
+            $machinery->setOperator("");
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($machinery);
+            $em->flush();
+            
+            $response = array('message' => "New Machinery added successfully.",);
+            
+            return $this->redirect($this->generateUrl('add_new_machinery', $response));
+            
+        } else if (isset($_POST['form_reset'])) { 
+             return $this->render('SystemResourceBundle:Pages:addNewMachinery.html.twig', array('form' => $form->createView(), 'message'=>$message));
+        }
+        
+        
         if($form->isValid()){
             
             $machinery=$form->getData();
