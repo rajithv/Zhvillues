@@ -15,10 +15,10 @@
     </div>
     <div style="clear: both"></div>
     {% endblock %}
-    {{message}}
     <div class="block">
         {% block content %}
         <form action="{{ path('add_new_consumable') }}" method="POST" id="contact_form">
+           {{message}}
             <div>
                 {{ form_label(form.name,'Name') }}
                 {{ form_errors(form.name) }}

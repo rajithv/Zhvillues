@@ -5,7 +5,7 @@ namespace System\ResourceBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use System\ResourceBundle\Entity\Machinery;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\Validator\Constraints;
 
 class NewMachineryController extends Controller
 {
@@ -32,12 +32,17 @@ class NewMachineryController extends Controller
             $machinery->setProject("");
             $machinery->setStatus("Available");
             $machinery->setOperator("");
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($machinery);
-            $em->flush();
-            
-            $response = array('message' => "New Machinery added successfully.",);
-            
+        
+            $validator = $this->get('validator');
+            $errors = $validator->validate($machinery);
+            if(count($errors)==0){
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($machinery);
+                $em->flush();
+                $response = array('message' => "New Machinery added successfully.",);
+            }else{
+                 $response = array('message' => "Invalid input. Please check again");
+            }
             return $this->redirect($this->generateUrl('add_new_machinery', $response));
             
         } else if (isset($_POST['form_reset'])) { 
@@ -51,12 +56,18 @@ class NewMachineryController extends Controller
             $machinery->setProject("");
             $machinery->setStatus("Available");
             $machinery->setOperator("");
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($machinery);
-            $em->flush();
             
-            $response = array('message' => "New Machinery added successfully.",);
-        
+            $validator = $this->get('validator');
+            $errors = $validator->validate($machinery);
+            if(count($errors)==0){
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($machinery);
+                $em->flush();
+
+                $response = array('message' => "New Machinery added successfully.",);
+            }else{
+                 $response = array('message' => "Invalid input. Please check again");
+            }
             return $this->redirect($this->generateUrl('add_new_machinery', $response));
         }
         

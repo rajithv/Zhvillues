@@ -3,7 +3,7 @@
 namespace System\ResourceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Consumable
  */
@@ -17,25 +17,38 @@ class Consumable
     /**
      * @var string
      */
+    /*@Assert\NotNull()*/
     private $name;
 
     /**
      * @var float
+     */
+    /**
+      * @Assert\Type(type="numeric", message="The value {{ value }} is not a valid number.")
      */
     private $quantity;
 
     /**
      * @var float
      */
+    /**
+      * @Assert\Type(type="numeric", message="The value {{ value }} is not a valid number.")
+     */
     private $unitValue;
 
     /**
      * @var float
      */
+    /**
+      * @Assert\Type(type="numeric", message="The value {{ value }} is not a valid number.")
+     */
     private $pendingOrders;
 
     /**
      * @var float
+     */
+    /**
+      * @Assert\Type(type="numeric", message="The value {{ value }} is not a valid number.")
      */
     private $toBeOrdered;
 

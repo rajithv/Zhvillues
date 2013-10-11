@@ -3,6 +3,7 @@
 namespace System\ResourceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * HR
@@ -17,25 +18,41 @@ class HR
     /**
      * @var string
      */
+    /* 
+     * @Assert\NotNull()
+     */
     private $code;
 
     /**
      * @var string
      */
+    /*@Assert\NotNull()*/
     private $name;
 
     /**
      * @var string
      */
+    
+    
     private $department;
 
+    /**@var string*/
+   
     /**
-     * @var string
+     * @Assert\Length(
+     *      min = "10",
+     *      max = "10",
+     *      exactMessage = "NIC must be EXACTLY 10 characters length"    
+     * )
+     * @Assert\NotNull()
      */
-    private $idNo;
+     private $idNo;
 
     /**
      * @var float
+     */
+     /**
+      * @Assert\Type(type="numeric", message="The value {{ value }} is not a valid number.")
      */
     private $rateHour;
 

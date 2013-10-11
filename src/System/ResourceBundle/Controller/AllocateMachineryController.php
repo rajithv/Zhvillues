@@ -89,9 +89,10 @@ class AllocateMachineryController extends Controller{
                 $con->setQuantity($q);
                 $cProducts[0]->setQuantity($q);
                 $em->flush();
-            $response = array('message' => "Consumables ".$con->getName()." added successfully.",);
+            $response = array('message' => "Consumables ".$con->getName()." added successfully.");
             }
-            return $this->render('SystemResourceBundle:Pages:allocateMachinery.html.twig', array('Mform' => $Mform->createView(),'MAllocations'=>$allocatedMachines,'Hform' => $Hform->createView(),'Hallocations'=>$allocatedHR,'Cform' => $Cform->createView()));
+        echo $response['message'];
+        return $this->render('SystemResourceBundle:Pages:allocateMachinery.html.twig', array('Mform' => $Mform->createView(),'MAllocations'=>$allocatedMachines,'Hform' => $Hform->createView(),'Hallocations'=>$allocatedHR,'Cform' => $Cform->createView()));
         }
             //end consumable submition
             
@@ -104,7 +105,7 @@ class AllocateMachineryController extends Controller{
                 )->setParameter('tobesearched', $machine->getCode());
                 $mProducts = $query->getResult();
                 if(count($mProducts)<1 ){
-                    $response = array('message' => "Machinery ".$machine->getCode()." cannot be found.",);
+                    $response = array('message' => "Machinery ".$machine->getCode()." cannot be found.");
                 }elseif(strcmp($mProducts[0]->getStatus(),"Available")!=0){          
                     $response = array('message' => "Machine ".$machine->getCode()." is not available for Allocation.",);
                 }else{
@@ -116,6 +117,7 @@ class AllocateMachineryController extends Controller{
                     $em->flush();
                     $response = array('message' => "Machine ".$machine->getCode()." added successfully.",);
                 }
+           echo $response['message'];
             return $this->render('SystemResourceBundle:Pages:allocateMachinery.html.twig', array('Mform' => $Mform->createView(),'MAllocations'=>$allocatedMachines,'Hform' => $Hform->createView(),'Hallocations'=>$allocatedHR,'Cform' => $Cform->createView()));
         }
             //end machinery submition
@@ -139,13 +141,12 @@ class AllocateMachineryController extends Controller{
                     $em->flush();
                     $response = array('message' => "HR ".$hr->getCode()." added successfully.",);
                 }
+           echo $response['message'];     
            return $this->render('SystemResourceBundle:Pages:allocateMachinery.html.twig', array('Mform' => $Mform->createView(),'MAllocations'=>$allocatedMachines,'Hform' => $Hform->createView(),'Hallocations'=>$allocatedHR,'Cform' => $Cform->createView()));
            //end HR submition
-            
         }
-       
-         return $this->render('SystemResourceBundle:Pages:allocateMachinery.html.twig', array('Mform' => $Mform->createView(),'MAllocations'=>$allocatedMachines,'Hform' => $Hform->createView(),'Hallocations'=>$allocatedHR,'Cform' => $Cform->createView()));
         
+        return $this->render('SystemResourceBundle:Pages:allocateMachinery.html.twig', array('Mform' => $Mform->createView(),'MAllocations'=>$allocatedMachines,'Hform' => $Hform->createView(),'Hallocations'=>$allocatedHR,'Cform' => $Cform->createView()));
     }
     
 }

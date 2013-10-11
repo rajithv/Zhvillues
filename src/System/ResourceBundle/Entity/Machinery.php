@@ -3,7 +3,7 @@
 namespace System\ResourceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Machinery
  */
@@ -22,20 +22,30 @@ class Machinery
     /**
      * @var string
      */
+    /*@Assert\NotNull()*/
     private $name;
 
     /**
      * @var float
+     */
+     /**
+      * @Assert\Type(type="numeric", message="The value {{ value }} is not a valid number.")
      */
     private $netPresentValue;
 
     /**
      * @var float
      */
+     /**
+      * @Assert\Type(type="numeric", message="The value {{ value }} is not a valid number.")
+     */
     private $opCostHour;
 
     /**
      * @var float
+     */
+     /**
+      * @Assert\Type(type="numeric", message="The value {{ value }} is not a valid number.")
      */
     private $depRate;
 

@@ -5,6 +5,7 @@ namespace System\ResourceBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use System\ResourceBundle\Entity\Consumable;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints;
 
 class NewConsumableController extends Controller
 {
@@ -29,16 +30,20 @@ class NewConsumableController extends Controller
         $form->handleRequest($request);
         
         if (isset($_POST['form_Submit'])) { 
-           $consumable=$form->getData();
+            $consumable=$form->getData();
             $consumable->setPendingOrders(0);
             $consumable->setToBeOrdered(0);
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($consumable);
-            $em->flush();
             
-            $response = array(
-              'message' => "New consumable added successfully.",
-            );
+            $validator = $this->get('validator');
+            $errors = $validator->validate($consumable);
+            if(count($errors)==0){
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($consumable);
+                $em->flush();
+                $response = array('message' => "New consumable added successfully.",);
+            }else{
+                 $response = array('message' => "Invalid input. Please check again");
+            }
         
             return $this->redirect($this->generateUrl('add_new_consumable', $response));
         } else if (isset($_POST['form_reset'])) { 
@@ -50,15 +55,19 @@ class NewConsumableController extends Controller
             $consumable=$form->getData();
             $consumable->setPendingOrders(0);
             $consumable->setToBeOrdered(0);
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($consumable);
-            $em->flush();
             
-            $response = array(
-              'message' => "New consumable added successfully.",
-            );
-        
-            return $this->redirect($this->generateUrl('add_new_consumable', $response));
+            $validator = $this->get('validator');
+            $errors = $validator->validate($consumable);
+            if(count($errors)==0){
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($consumable);
+                $em->flush();
+            
+                $response = array('message' => "New consumable added successfully.",);
+            }else{
+                 $response = array('message' => "Invalid input. Please check again");
+            }
+             return $this->redirect($this->generateUrl('add_new_consumable', $response));
         }
         return $this->render('SystemResourceBundle:Pages:addNewConsumable.html.twig', array('form' => $form->createView(),'message' => $message));
     }

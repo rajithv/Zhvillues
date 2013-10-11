@@ -451,7 +451,7 @@
     <parameter key="assetic.read_from">C:/xampp/htdocs/Zhvillues/app/../web</parameter>
     <parameter key="assetic.write_to">C:/xampp/htdocs/Zhvillues/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
-    <parameter key="assetic.java.bin">C:\Users\hp\algs4\java\bin\java.EXE</parameter>
+    <parameter key="assetic.java.bin">C:\Program Files\Java\jre7\bin\java.EXE</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
@@ -2712,7 +2712,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5257733bdc681</argument>
+            <argument>5257acf132f70</argument>
           </service>
         </argument>
       </argument>
@@ -3033,7 +3033,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5257733bdc681</argument>
+            <argument>5257acf132f70</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>

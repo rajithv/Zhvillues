@@ -26,6 +26,7 @@ framework:
     session:         ~
     fragments:       ~
     http_method_override: true
+    validation: { enable_annotations: true }
 
 # Twig Configuration
 twig:
