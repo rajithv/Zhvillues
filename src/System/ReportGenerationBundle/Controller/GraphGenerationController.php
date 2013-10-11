@@ -5,8 +5,10 @@ namespace System\ReportGenerationBundle\Controller;
 use System\ReportGenerationBundle\Controller\ImagePrintingController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-include ("d:/Uni Project stuff/jpgraph-3.5.0b1/src/jpgraph.php");   
-include ("d:/Uni Project stuff/jpgraph-3.5.0b1/src/jpgraph_bar.php");
+include ("c:/xampp/htdocs/Zhvillues/src/System/ReportGenerationBundle/jpgraph/src/jpgraph.php");
+include ("c:/xampp/htdocs/Zhvillues/src/System/ReportGenerationBundle/jpgraph/src/jpgraph_bar.php");
+//include ("d:/Uni Project stuff/jpgraph-3.5.0b1/src/jpgraph.php");   
+//include ("d:/Uni Project stuff/jpgraph-3.5.0b1/src/jpgraph_bar.php");
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
